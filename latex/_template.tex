@@ -1,0 +1,283 @@
+% The MIT License (MIT)
+%
+% Copyright (c) 2016 Philipp Pascal Jean-Jacques
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+
+% References used:
+% http://www.uni-regensburg.de/sprache-literatur-kultur/medieninformatik/medien/materialien/formatvorlage_seminararbeit_iw_mi_110124_v12_final.dotx.zip
+% http://www.uni-regensburg.de/sprache-literatur-kultur/romanistik/medien/leitfaden_schriftliche_arbeiten.pdf
+
+\documentclass[12pt,a4paper,oneside,ngerman]{scrartcl}
+
+\usepackage[T1]{fontenc}
+\usepackage{ngerman}
+\usepackage{xunicode}
+\usepackage{polyglossia}
+\setmainlanguage[babelshorthands=true]{german}
+\usepackage{xltxtra}
+\usepackage{graphicx}
+\usepackage[bookmarks=true,
+			bookmarksnumbered=false,
+			bookmarksopen=false,
+			colorlinks=true,
+			linkcolor=black,
+			citecolor=black,
+			urlcolor=black
+			]{hyperref}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{mathcomp}
+\usepackage{lmodern,dsfont}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{apacite}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{nameref}
+\usepackage[round]{natbib}
+
+% page borders
+\usepackage[a4paper,left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+\newcommand{\getAuthor}{unbekannter Author}
+\newcommand{\getTitle}{kein Titel}
+\newcommand{\getCourse}{kein Kurs}
+\newcommand{\getSemester}{SS 12}
+\newcommand{\getDozent}{Kein Dozent}
+\newcommand{\getDate}{\today}
+\newcommand{\getStudID}{}
+\newcommand{\getStud}{}
+\newcommand{\getStudSemester}{}
+\newcommand{\getMail}{}
+\newcommand{\getKeywords}{}
+\newcommand{\getModule}{}
+\newcommand{\getAddress}{}
+\newcommand{\getDateHandedIn}{}
+\newcommand{\getPhone}{}
+\renewcommand{\author}[1]{\renewcommand{\getAuthor}{#1\\}}
+\renewcommand{\title}[1]{\renewcommand{\getTitle}{#1}}
+\newcommand{\course}[1]{\renewcommand{\getCourse}{#1}}
+\newcommand{\semester}[1]{\renewcommand{\getSemester}{#1}}
+\newcommand{\dozent}[1]{\renewcommand{\getDozent}{#1}}
+\newcommand{\studid}[1]{\renewcommand{\getStudID}{#1\\}}
+\newcommand{\stud}[1]{\renewcommand{\getStud}{#1\\}}
+\newcommand{\studsemester}[1]{\renewcommand{\getStudSemester}{#1\\}}
+\newcommand{\mail}[1]{\renewcommand{\getMail}{\href{mailto:#1}{#1}}}
+\newcommand{\keywords}[1]{\renewcommand{\getKeywords}{#1}}
+\newcommand{\module}[1]{\renewcommand{\getModule}{#1}}
+\newcommand{\address}[2]{\renewcommand{\getAddress}{#1\\#2}}
+\newcommand{\phone}[1]{\renewcommand{\getPhone}{#1}}
+\newcommand{\dateHandedIn}[1]{\renewcommand{\getDateHandedIn}{#1}}
+\newcommand{\writemeta}{
+	\hypersetup{pdfinfo={
+		Title={\getTitle},
+		Author={\getAuthor},
+		Subject={\getCourse},
+		Keywords={\getKeywords}
+	}}
+}
+
+\renewcommand*{\sectionmark}[1]{\markright{#1}}
+\renewcommand{\abstract}{\noindent\begin{large}\textbf{Abstract}\end{large}\\\vspace*{10pt}\\}
+
+\newcommand{\N}{\mathds{N}}
+\newcommand{\comment}[1]{}
+\newcommand{\citei}[1]{\phantom{\cite{#1}}}
+
+\newcommand{\img}[2]{
+	\includegraphics[width=#2]{images/#1}
+}
+
+\renewcommand{\maketitle}{
+\setstretch{1.0}
+
+\vspace*{-30pt}
+\hfill\includegraphics[width=0.45\textwidth]{images/logo_uni}
+\vspace*{20pt}
+
+\noindent
+\textbf{Philosophische Fakult"at III \\
+Sprach- , Literatur- und Kulturwissenschaften \\
+Institut f"ur Information und Medien, Sprache und Kultur (I:IMSK)\\
+Lehrstuhl f"ur Medieninformatik \\
+\rule{\textwidth}{0.4pt}
+\vspace*{0pt}
+\\
+}
+\noindent
+\getCourse\\
+Modul: \getModule\\
+\getSemester\\
+Leitung: \getDozent\\
+\vspace*{120pt}
+
+\begin{center}
+\begin{LARGE}
+\getTitle \\
+\end{LARGE}
+\end{center}
+
+\vfill
+
+\noindent\getAuthor
+\getStudID
+\getStud
+\getStudSemester
+\\
+\getAddress\\
+Tel.: \getPhone\\
+Email: \getMail\\
+Abgegeben am \getDateHandedIn
+}
+
+% - - - - - - - - - - - - - - - - - - - -
+% colors
+
+\definecolor{grassgreen}{rgb}{0.2, 0.6, 0.1}
+\definecolor{lightgray}{gray}{0.5}
+\definecolor{orange}{rgb}{1.0, 0.6, 0.1}
+\definecolor{purple}{rgb}{0.6, 0.1, 1.0}
+
+% - - - - - - - - - - - - - - - - - - - -
+
+% - - - - - - - - - - - - - - - - - - - -
+% processing language
+\lstdefinelanguage{Processing} {
+   string=[b]", 
+   stringstyle=\color{processing_global},     
+   morecomment=[l][\color{processing_comment}]{//}, commentstyle=\color{processing_comment},
+   morecomment=[s][\color{processing_comment}]{/*}{*/}, commentstyle=\color{processing_comment},
+   keywords = [1]
+   {
+      arc, ellipse, line, point, quad, rect, triangle, catch, class, delay, draw, exit, extends, false, final, implements,
+	  import, loop, new, noLoop, null, popStyle, private, public, pushStyle, redraw, return, setup, size, static, super, 	 
+	  this, true, try, void, noCursor, boolean, byte, char ,color, double, float, int, long, Array, ArrayList, HashMap, 
+	  Object, String, XMLElement, binary, boolean, unbinary, unhex, String, join, match, matchAll, nf, nfc, nfp, nfs, split, 
+	  splitTokens, trim, append, arrayCopy, concat, expand, reverse, shorten, sort, splice, subset, for, while, break, case, 
+	  switch, if, else, continue, default, PShape, bezier, bezierDetail, bezierPoint, bezierTangent, curve, 
+	  curveDetail, curvePoint, curveTangent, curveTightness, box, sphere, sphereDetail, ellipseMode, noSmooth, rectMode, 
+	  smooth, strokeCap, strokeJoin, strokeWeight, beginShape, bezierVertex, curveVertex, endShape, texture, textureMode, 
+	  vertex, loadShape, shape, shapeMode, mouseClicked, mouseDragged, mouseMoved, mousePressed, mouseReleased, keyPressed, 
+	  keyReleased, keyTyped, day, hour, millis, minute, month, second, year, print, println, save, saveFrame, applyMatrix, 
+	  popMatrix, printMatrix, pushMatrix, resetMatrix, rotate, rotateX, rotateY, rotateZ, scale, shearX, shearY, translate, 
+	  ambientLight, directionalLight, lightFalloff, lightSpecular, lights, noLights, normal, pointLight, spotLight, 
+	  beginCamera, camera, endCamera, frustum, ortho, perspective, printCamera, printProjection, modelX, modelY, modelZ, 
+	  screenX, screenY, screenZ, ambient, emissive, shininess, specular, background, colorMode, fill, noFill, noStroke, 
+	  stroke, alpha, blendColor, blue, brightness, color, green, hue, lerpColor, red, saturation, PImage, createImage, image, 
+	  imageMode, loadImage, noTint, requestImage, tint, blend, copy, filter, get, loadPixels, pixels, set, updatePixels, 
+	  PGraphics, createGraphics, hint, PFont, PVector, createFont, loadFont, text, textFont, textAlign, textLeading, 
+	  textMode, textSize, textWidth, textAscent, textDescent, abs, ceil, constrain, dist, exp, floor, lerp, log, mag, map, 
+	  max, min, norm, pow, round, sq, sqrt, acos, asin, atan, atan2, cos, degrees, radians, sin, tan, noise, noiseDetail, 
+	  noiseSeed, random, randomSeed, protected
+   },
+   keywordstyle={[1]\color{processing_method}},
+   keywords = [2]
+   {
+      cursor, focused, frameCount, frameRate, height, online, screen, width, mouseX, mouseY, pmouseX, pmouseY, mouseButton, 
+      key, keyCode, HALF_PI, PI, QUARTER_PI, TWO_PI
+   },
+   keywordstyle={[2]\color{processing_global}},
+}
+
+\definecolor{grassgreen}{rgb}{0.2, 0.6, 0.1}
+\definecolor{lightgray}{gray}{0.5}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, class, export, boolean, throw, implements, import, this},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={console},
+  ndkeywordstyle=\color{grassgreen}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{lightgray}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstdefinelanguage{Python}{
+  	ndkeywords={console},
+  	ndkeywordstyle=\color{grassgreen}\bfseries,
+  	identifierstyle=\color{black},
+  	sensitive=false,
+  	comment=[l]{\#},
+  	morecomment=[s]{/*}{*/},
+  	commentstyle=\color{lightgray}\ttfamily,
+  	stringstyle=\color{orange}\ttfamily,
+  	morestring=[b]',
+  	morestring=[b]",
+	keywords = [1] {
+  		for, in, import, return, print, if, else, global, assert, try, except, pass
+  	},
+  	keywordstyle={[1]\color{blue}\bfseries},
+	keywords = [2] {
+  		def, len, class, ord, range, sorted, int, str
+  	},
+  	keywordstyle={[2]\color{grassgreen}\bfseries},
+ 	keywords = [3] {
+		True, False, None, @classmethod, self
+  	},
+  	keywordstyle={[3]\color{purple}\bfseries}
+}
+% - - - - - - - - - - - - - - - - - - - -
+
+% - - - - - - - - - - - - - - - - - - - -
+\lstloadlanguages{Python}
+\lstset{
+	language=Python,   % default language
+	xleftmargin=0.6cm, 
+	frameround=ffff, 
+	rulecolor = \color[rgb]{0.6, 0.6, 0.6},
+	framexleftmargin= 1.5mm, 
+	framexrightmargin= -5.5mm, 
+	numbers=left, 
+	numberstyle=\ttfamily, 
+	basicstyle=\ttfamily, 
+	backgroundcolor=\color[rgb]{0.975, 0.975, 0.975},
+	breaklines=true, 
+	tabsize=4, 
+	frame=bt,
+	showstringspaces=false, 
+	showstringspaces=false,
+	upquote=true,
+}
+% - - - - - - - - - - - - - - - - - - - -
+
+\def\labelitemi{--}
+
+% - - - - - - - - - - - - - - - - - - - -
+
+\renewcommand\lstlistingname{Algorithmus}
+\renewcommand\lstlistlistingname{Algorithmen}
+
+% - - - - - - - - - - - - - - - - - - - -
+
+\renewcommand{\familydefault}{\sfdefault}
+\setromanfont{Frutiger Serif LT Pro}
+\setmonofont[Scale=1.0,BoldFont={* Medium}]{Source Code Pro}
+\setsansfont[BoldFont={* Bold}]{Frutiger Serif LT Pro}
+\setmainfont[BoldFont={* Bold}]{Frutiger Serif LT Pro}
+
+\titleformat*{\section}{\Large\bfseries\sffamily}
+\titleformat*{\subsection}{\large\bfseries\sffamily}
+\titleformat*{\subsubsection}{\itshape\bfseries\sffamily}
