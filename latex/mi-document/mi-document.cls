@@ -1,6 +1,7 @@
 % The MIT License (MIT)
 %
 % Copyright (c) 2016 Philipp Pascal Jean-Jacques
+% Copyright (c) 2019 Andreas Schmid
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -21,14 +22,17 @@
 % SOFTWARE.
 
 \ProvidesClass{mi-document}[2016/07/15 v2.0 mi-document]
-\LoadClass[12pt,a4paper,oneside,ngerman]{scrartcl}
+\LoadClass[11.5pt,a4paper,oneside,ngerman]{scrartcl}
 
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{unicode-math}
 \usepackage{ngerman}
+% AS: xltxtra has to be BEFORE xunicode to prevent errors with captions (\nobreakspace)
+\usepackage{xltxtra}
 \usepackage{xunicode}
 \usepackage{polyglossia}
 \setmainlanguage[babelshorthands=true]{german}
-\usepackage{xltxtra}
 \usepackage{graphicx}
 \usepackage[bookmarks=true,
 			bookmarksnumbered=false,
@@ -49,8 +53,9 @@
 \usepackage{titlesec}
 \usepackage{fancyhdr}
 \usepackage{nameref}
+\usepackage{pifont}
 \usepackage[round]{natbib}
-\usepackage[a4paper,left=3.7cm,right=3.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[a4paper,left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 
 \usepackage{mi-colors}
 \usepackage{mi-language-processing}

@@ -22,5 +22,4 @@
 
 \ProvidesClass{mi-graduation}[2016/07/15 v1.0 mi-graduation]
 \LoadClass[12pt,a4paper,oneside,ngerman]{mi-document}
-
 \usepackage{mi-graduation}

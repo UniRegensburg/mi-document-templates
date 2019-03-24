@@ -1,6 +1,7 @@
 % The MIT License (MIT)
 %
 % Copyright (c) 2016 Philipp Pascal Jean-Jacques
+% Copyright (c) 2019 Andreas Schmid
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -82,6 +83,19 @@
 \newcommand{\institute}[1]{\renewcommand{\getInstitute}{#1}}
 \newcommand{\defaultStretch}{\setstretch{1.5}}
 
+\newcommand{\signature}{
+    \vspace{1.5cm}
+    \begin{tabular}{lp{4cm}l}
+     \hspace{4cm}  && \hspace{4cm}
+     \\\cline{1-1}    \cline{3-3}
+     Ort, Datum    && Unterschrift
+    \end{tabular}
+}
+
+\newcommand{\checkbox}{
+    \ding{114}
+}
+
 \renewcommand*{\sectionmark}[1]{\markright{#1}}
 \renewcommand{\abstract}{\vspace*{20pt}\noindent\begin{large}\textbf{Abstract}\end{large}\\\vspace*{-10pt}\\}
 
@@ -120,7 +134,7 @@
 
 \renewcommand{\familydefault}{\sfdefault}
 \setromanfont{Palatino Linotype} % altenativ: Book Antiqua
-\setmonofont[Scale=1.0,BoldFont={* Medium}]{Source Code Pro} % Beliebiger monospaced font. Fonts mit Ligaturen sind nicht speziell erlaubt oder verboten (z.B. Fira Code). Vorgeschlagene Schriftarten: Courier New, Consolas (Windows), Droid Sans Mono (Google Fonts).
+\setmonofont[Scale=0.8,BoldFont={*}]{DejaVuSansMono} % Beliebiger monospaced font. Fonts mit Ligaturen sind nicht speziell erlaubt oder verboten (z.B. Fira Code). Vorgeschlagene Schriftarten: DejaVu Sans Mono, Source Code Pro, Courier New, Consolas (Windows), Droid Sans Mono (Google Fonts).
 \setsansfont[BoldFont={* Bold}]{Palatino Linotype} % altenativ: Book Antiqua
 \setmainfont[BoldFont={* Bold}]{Palatino Linotype} % altenativ: Book Antiqua
 
