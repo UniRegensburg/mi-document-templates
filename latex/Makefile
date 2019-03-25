@@ -3,7 +3,7 @@ TEXMF=$(shell kpsewhich -var-value=TEXMFHOME)
 all: install
 
 uninstall:
-	rm -rf ~/texmf/text/latex/mi-document
+	rm -rf $(TEXMF)/tex/latex/mi-document
 
 copy_files:
 	cp mi-document/*.sty $(TEXMF)/tex/latex/mi-document
