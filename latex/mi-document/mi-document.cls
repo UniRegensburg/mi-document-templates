@@ -22,7 +22,7 @@
 % SOFTWARE.
 
 \ProvidesClass{mi-document}[2016/07/15 v2.0 mi-document]
-\LoadClass[11.5pt,a4paper,oneside,ngerman]{scrartcl}
+\LoadClass[11pt,a4paper,oneside,ngerman]{scrartcl}
 
 %\usepackage[T1]{fontenc}
 \usepackage{fontspec}
@@ -55,7 +55,8 @@
 \usepackage{nameref}
 \usepackage{pifont}
 \usepackage[round]{natbib}
-\usepackage[a4paper,left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[a4paper,left=3.5cm,right=3.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{setspace}
 
 \usepackage{mi-colors}
 \usepackage{mi-language-processing}
