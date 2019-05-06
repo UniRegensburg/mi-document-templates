@@ -23,6 +23,11 @@
 \ProvidesClass{mi-document}[2016/07/15 v2.0 mi-document]
 \LoadClass[12pt,a4paper,oneside,ngerman]{scrartcl}
 
+\usepackage{sourcecodepro}
+\usepackage{fontspec}
+
+\usepackage{mathpazo}
+
 \usepackage[T1]{fontenc}
 \usepackage{ngerman}
 \usepackage{xunicode}
@@ -57,3 +62,5 @@
 \usepackage{mi-language-javascript}
 \usepackage{mi-language-python}
 \usepackage{mi-document}
+% Nützlich wenn man während der Arbeit erstellte Dokument ganzseitig einbinden möchte - optional
+\usepackage{pdfpages}

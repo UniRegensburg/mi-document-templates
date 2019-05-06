@@ -1,4 +1,4 @@
-\documentclass{mi-graduation}
+\documentclass{mi-document/mi-graduation}
 
 \bachelor
 \title{[Titel der Bachelor-/ Masterarbeit, ggf. auch über mehrere Zeilen hinweg.]}
@@ -47,6 +47,9 @@ Besser: „In dieser Arbeit wurde untersucht, inwiefern das Lesen von Zusammenfa
 A summary in English. It should be more or less similar to the German Zusammenfassung. Avoid too verbatim translations („In this work it was examined how the reading of ...“)
 
 \newpage
+% Aufgabenstellung taucht so nicht im Inhaltsverzeichnis auf.
+\section*{Aufgabenstellung}
+\newpage
 \pagestyle{fancy}
 
 \section{Über dieses Dokument}
@@ -83,7 +86,48 @@ public class Main {
 \end{lstlisting}
 
 \newpage
+% Das Literaturverzeichnis soll ohne Nummerierung auftauchen
+\urlstyle{rm} % Verhindert, dass URLs fettgedruckt angezeigt werden
 \bibliographystyle{apacite}
+\phantomsection
+\addcontentsline{toc}{section}{Literatur}
 \bibliography{literature}
 
+\newpage
+% Erklärung zur Urheberschaft soll ebenfalls ohne Nummerierung angezeigt werden
+\phantomsection
+\addcontentsline{toc}{section}{Erklärung zur Urheberschaft}
+\section*{Erklärung zur Urheberschaft}
+\markright{Erklärung zur Urheberschaft}
+Ich habe die Arbeit selbständig verfasst, keine anderen als die angegebenen Quellen und Hilfsmittel benutzt, sowie alle Zitate und Übernahmen von fremden Aussagen kenntlich gemacht.
+
+\noindent Die Arbeit wurde bisher keiner anderen Prüfungsbehörde vorgelegt.
+
+\noindent Die vorgelegten Druckexemplare und die vorgelegte digitale Version sind identisch. 
+\vskip 2cm
+\noindent
+\begin{tabular}{lp{6em}r}
+ \hspace{5cm}   && \hspace{5cm} \\\cline{1-1}\cline{3-3}
+ Ort, Datum     && Unterschrift
+\end{tabular}
+
+\newpage
+\appendix
+
+% Dieser Abschnitt soll nicht Teil des Inhaltsverzeichnis sein und deshalb auch keinen Header besitzen
+\section*{Inhalt des beigefügten Datenträgers}
+\markright{}
+% Am besten den Tabellengenerator benutzen: https://www.tablesgenerator.com/
+\begin{table}[h]
+\begin{tabular}{ll}
+/1\_Ausarbeitung    & Die schriftliche Ausarbeitung als PDF und TeX         \\
+/2\_Code            & Quellcode und kompilierte Anwendung des Prototyps     \\
+/3\_Studie/Design   & Fragebogen und Script für die Benutzerstudie          \\
+/3\_Studie/Rohdaten & Rohdaten im CSV-Format, inkl. Beschreibung der Felder \\
+/4\_Quellen         & Alle in der Arbeit verwendeten Quellen                \\
+/5\_Bilder          & Alle verwendeten Bilder                               \\
+/6\_Vorträge        & Folien des Antritts- und Abschlussvortrags            \\
+/7\_Sonstiges       & Notizen aus Besprechungen etc.                       
+\end{tabular}
+\end{table}
 \end{document}
