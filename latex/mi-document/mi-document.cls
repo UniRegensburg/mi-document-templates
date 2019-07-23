@@ -57,6 +57,8 @@
 \usepackage[round]{natbib}
 \usepackage[a4paper,left=3.5cm,right=3.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 \usepackage{setspace}
+\usepackage{glossaries}
+\usepackage{multirow}
 
 \usepackage{mi-colors}
 \usepackage{mi-language-processing}
