@@ -23,7 +23,7 @@
 \ProvidesClass{mi-document}[2016/07/15 v2.0 mi-document]
 \LoadClass[12pt,a4paper,oneside,ngerman]{scrartcl}
 
-\usepackage[T1]{fontenc}
+\usepackage{fontspec}
 \usepackage{ngerman}
 \usepackage{xunicode}
 \usepackage{polyglossia}
