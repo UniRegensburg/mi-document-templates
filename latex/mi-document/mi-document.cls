@@ -1,7 +1,7 @@
 % The MIT License (MIT)
 %
 % Copyright (c) 2016 Philipp Pascal Jean-Jacques
-% Copyright (c) 2019 Andreas Schmid
+% Copyright (c) 2020 Andreas Schmid
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -21,7 +21,7 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\ProvidesClass{mi-document}[2016/07/15 v2.0 mi-document]
+\ProvidesClass{mi-document}[2020/03/19 v1.1 mi-document]
 \LoadClass[11pt,a4paper,oneside,ngerman]{scrartcl}
 
 %\usepackage[T1]{fontenc}

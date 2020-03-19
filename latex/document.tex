@@ -1,14 +1,16 @@
 \documentclass{mi-graduation}
 
-\bachelor
-\title{[Titel der Bachelor-/ Masterarbeit, ggf. auch über mehrere Zeilen hinweg.]}
-\author{[Autor der Arbeit]}
+\bachelor % im Falle einer Masterarbeit \master
+
+% Variablen, die für das Deckblatt und Metadaten verwendet werden
+\title{[Titel der Bachelor-/ Masterarbeit]}
+\author{[Autor*in der Arbeit]}
 \semester{[WS / SS und Jahreszahl]}
 \course{[Art des Seminars und Seminartitel (z.B. Praktikum Multimedia Engineering)]}
 \module{[z.B. MEI-M 04 (B.A.)]}
 \dozent{[Seminarleiter]}
 \studid{[Matrikelnummer]}
-\studSemester{[Semesterzahl und Studiengänge (z.B. 3. Semester B.A. Medieninformatik / In-formationswissenschaft)]}
+\studSemester{[Semesterzahl und Studiengänge (z.B. 3. Semester B.A. Medieninformatik / Informationswissenschaft)]}
 \phone{0941/133742666} % Optional
 \studSubject{Medieninformatik}
 \firstReviewer{Prof. Dr. Maike Musterprof}
@@ -23,6 +25,7 @@
 
 \begin{document}
 
+% Das Deckblatt erstellen
 \maketitle
 
 % Die Nummerierung beginnt mit der Titelseite (= Seite 1), soll aber erst ab der ersten Inhaltsseite (Einleitung) angezeigt werden.
@@ -40,9 +43,13 @@
 \newpage
 
 \summary
-Bachelor- und Masterarbeiten beginnen mit einer Zusammenfassung in einer deutschen und englischen Version. Die Zusammenfassung gibt einen Überblick über Thema und Resultate der Arbeit. Inhaltlich werden die Zielsetzung, die Methodik, die einzelnen Arbeitsschritte bzw. Gliederungspunkte und die Ergebnisse der Arbeit widergegeben.\\
-Schlecht: „Schon immer haben Menschen Zusammenfassungen geschrieben [Platitüde, keine Zusammenfassung]. In dieser Arbeit wurde in mehreren Stu-dien untersucht, wie Zusammenfassungen wirken. [Was genau wurde untersucht? Was waren die Ergebnisse?]“\\
-Besser: „In dieser Arbeit wurde untersucht, inwiefern das Lesen von Zusammenfassungen das Lesen des kompletten Dokuments ersetzen kann. Dazu wur-den zwei Studien mit jeweils 17 Teilnehmern durchgeführt. In der ersten wurde [...]. Diese Ergebnisse zeigen, dass Bedienungsanleitungen und Bilderbücher weniger gut über Zusammenfassungen erschlossen werden können, als Roma-ne oder Sachbücher.“
+Bachelor- und Masterarbeiten beginnen mit einer Zusammenfassung in einer deutschen und englischen Version.
+Die Zusammenfassung gibt einen Überblick über Thema und Resultate der Arbeit.
+Inhaltlich werden die Zielsetzung, die Methodik, die einzelnen Arbeitsschritte bzw. Gliederungspunkte und die Ergebnisse der Arbeit widergegeben.
+
+Schlecht: „Schon immer haben Menschen Zusammenfassungen geschrieben [Platitüde, keine Zusammenfassung]. In dieser Arbeit wurde in mehreren Studien untersucht, wie Zusammenfassungen wirken. [Was genau wurde untersucht? Was waren die Ergebnisse?]“
+
+Besser: „In dieser Arbeit wurde untersucht, inwiefern das Lesen von Zusammenfassungen das Lesen des kompletten Dokuments ersetzen kann. Dazu wurden zwei Studien mit jeweils 17 Teilnehmern durchgeführt. In der ersten wurde [...]. Diese Ergebnisse zeigen, dass Bedienungsanleitungen und Bilderbücher weniger gut über Zusammenfassungen erschlossen werden können, als Romane oder Sachbücher.“
 
 \abstract
 A summary in English. It should be more or less similar to the German Zusammenfassung. Avoid too verbatim translations („In this work it was examined how the reading of ...“)
@@ -50,9 +57,28 @@ A summary in English. It should be more or less similar to the German Zusammenfa
 \newpage
 \pagestyle{fancy}
 
+
+%\fancyhf{}
+%%\cfoot[]{\thepage}
+%\fancyhead[R]{\nouppercase{\leftmark}}
+%\renewcommand{\headrulewidth}{0pt}
+%\fancyfoot[C]{\thepage}
+
+
+
 \section{Über dieses Dokument}
-Dieses Dokument soll Ihnen den Einstieg beim Verfassen einer Studienarbeit erleichtern. Die Vorgaben sind als Empfehlungen zu verstehen, können aber bei Bedarf in Absprache mit den Dozenten angepasst und erweitert werden. Hier steht ein Beispielabschnitt. Die Schriftart ist Palatino Linotype, die Schriftgröße 11pt. Ein Verweis auf eine Abbildung (vgl. \nameref{img:norman2010}) wird in diesem Satz verdeutlicht. Alternativ eignen sich auch Serifenschriftarten wie Garamond, Times New Roman oder Frutiger Serif Pro. Querverweise (vgl. \nameref{section:2}) werden in diesem Satz  gezeigt. Der erste Absatz jedes Abschnitts und Absätze nach Abbildungen werden nicht eingerückt (Formatvorlage ist Standard). Ein weiterer Absatz wird durch Drücken der Return-Taste erzeugt und automatisch eingerückt. Absätze werden also nicht durch Leerzeilen, sondern durch Einrücken des Folgeabsatzes getrennt. Die Folgeabsätze erhalten automatisch die Formatvorlage Folgeabsatz.
-In dieser Vorlage können auch Codeschnipsel eingesetzt und referenziert werden (vgl. Algorithmus: \nameref{helloworld}).
+Dieses Dokument soll Ihnen den Einstieg beim Verfassen einer Studienarbeit erleichtern.
+Die Vorgaben sind als Empfehlungen zu verstehen, können aber bei Bedarf in Absprache mit den Dozenten angepasst und erweitert werden.
+Hier steht ein Beispielabschnitt.
+Die Schriftart ist Palatino Linotype, die Schriftgröße 11pt.
+Ein Verweis auf eine Abbildung (vgl. \nameref{img:norman2010}) wird in diesem Satz verdeutlicht.
+Alternativ eignen sich auch Serifenschriftarten wie Garamond, Times New Roman oder Frutiger Serif Pro.
+Querverweise (vgl. \nameref{section:2}) werden in diesem Satz  gezeigt.
+Der erste Absatz jedes Abschnitts und Absätze nach Abbildungen werden nicht eingerückt (Formatvorlage ist Standard).
+Ein weiterer Absatz wird durch Drücken der Return-Taste erzeugt und automatisch eingerückt.
+Absätze werden also nicht durch Leerzeilen, sondern durch Einrücken des Folgeabsatzes getrennt.
+Die Folgeabsätze erhalten automatisch die Formatvorlage Folgeabsatz.
+In dieser Vorlage können auch Codeschnipsel eingesetzt und referenziert werden (vgl. Codebeispiel: \nameref{helloworld}).
 
 In der Kopfzeile erscheint immer der Text der aktuellen Überschrift, die mit der Formatvorlage „Überschrift 1“ formatiert wird. Somit wird dem Leser die Orientierung in der Arbeit erleichtert.\\
 
@@ -84,110 +110,16 @@ public class Main {
 \end{lstlisting}
 
 \newpage
+% Literaturverzeichnis anzeigen
 \bibliographystyle{apacite}
 \bibliography{literature}
 
 \newpage
-\thispagestyle{plain}
-\addcontentsline{toc}{section}{Erklärung zur Urheberschaft}
-\section*{Erklärung zur Urheberschaft}
-
-\noindent
-Ich habe die Arbeit selbständig verfasst, keine anderen als die angegebenen Quellen und Hilfsmittel benutzt, sowie alle Zitate und Übernahmen von fremden Aussagen kenntlich gemacht. 
-
-\noindent
-Die Arbeit wurde bisher keiner anderen Prüfungsbehörde vorgelegt. 
-
-\noindent
-Die vorgelegten Druckexemplare und die vorgelegte digitale Version sind identisch.
-
-\noindent
-[Nur für Masterarbeiten:] Von den zu § 27 Abs. 5 der Prüfungsordnung vorgesehenen Rechtsfolgen habe ich Kenntnis.
-
-\signature
+% Erklärung zur Urherberschaft (urheberschaft.tex) anhängen
+\input{urheberschaft}
 
 \newpage
-\thispagestyle{plain}
-\addcontentsline{toc}{section}{Erklärung zur Lizenzierung und Publikation dieser Arbeit}
-\section*{Erklärung zur Lizenzierung und Publikation dieser Arbeit}
-
-\noindent
-\textbf{Name:} (eigener Name)
-\medskip
-
-\noindent
-\textbf{Titel der Arbeit:} (Titel wie auf dem Deckblatt)
-\medskip
-
-\begin{spacing}{1.15}
-\noindent
-Hiermit gestatte ich die Verwendung der schriftlichen Ausarbeitung zeitlich unbegrenzt und nicht-exklusiv unter folgenden Bedingungen:
-
-\bigskip
-\noindent
-\begin{spacing}{1}
- \begin{itemize}
-  \item[]{\checkbox Nur zur Bewertung dieser Arbeit}
-  \item[]{\checkbox Nur innerhalb des Lehrstuhls im Rahmen von Forschung und Lehre}
-  \item[]{\checkbox Unter einer Creative-Commons-Lizenz mit den folgenden Einschränkungen:}
-  \begin{itemize}
-   \item[]{\checkbox BY – Namensnennung des Autors}
-   \item[]{\checkbox NC – Nichtkommerziell}
-   \item[]{\checkbox SA – Share-Alike, d.h. alle Änderungen müssen unter die gleiche Lizenz gestellt werden.}
-  \end{itemize}
- \end{itemize}
-\end{spacing}
-
-\bigskip
-\noindent
-(An Zitaten und Abbildungen aus fremden Quellen werden keine weiteren Rechte eingeräumt.)
-
-\bigskip
-\noindent
-Außerdem gestatte ich die Verwendung des im Rahmen dieser Arbeit erstellen Quellcodes unter folgender Lizenz:
-
-\begin{spacing}{1}
- \begin{itemize}
-  \item[]{\checkbox Nur zur Bewertung dieser Arbeit}
-  \item[]{\checkbox Nur innerhalb des Lehrstuhls im Rahmen von Forschung und Lehre}
-  \item[]{\checkbox Unter der CC-0-Lizenz (= beliebige Nutzung)}
-  \item[]{\checkbox Unter der MIT-Lizenz (= Namensnennung)}
-  \item[]{\checkbox Unter der GPLv3-Lizenz (oder neuere Versionen)}
- \end{itemize}
-\end{spacing}
-
-\bigskip
-\noindent
-(An explizit mit einer anderen Lizenz gekennzeichneten Bibliotheken und Daten werden keine weiteren Rechte eingeräumt.)
-
-\bigskip
-\noindent
-Ich willige ein, dass der Lehrstuhl  für Medieninformatik diese Arbeit – falls sie besonders gut ausfällt - auf dem Publikationsserver der Universität Regensburg veröffentlichen lässt.
-
-\bigskip
-\noindent
-Ich übertrage deshalb der Universität Regensburg das Recht, die Arbeit elektronisch zu speichern und in Datennetzen öffentlich zugänglich zu machen. Ich übertrage (wir übertragen) der Universität Regensburg ferner das Recht zur Konvertierung zum Zwecke der Langzeitarchivierung unter Beachtung der Bewahrung des Inhalts (die Originalarchivierung bleibt erhalten).
-
-\bigskip
-\noindent
-Ich erkläre außerdem, dass von mir die urheber- und lizenzrechtliche Seite (Copyright) geklärt wurde und Rechte Dritter der Publikation nicht entgegenstehen.
-
-\bigskip
-\begin{spacing}{1}
- \begin{itemize}
-  \item[]{\checkbox Ja, für die komplette Arbeit inklusive Anhang}
-  \item[]{\checkbox Ja, für eine um vertrauliche Informationen gekürzte Variante (auf dem Datenträger beigefügt)}
-  \item[]{\checkbox Nein}
- \end{itemize}
- 
- \bigskip
- \begin{itemize}
-  \item[]{\checkbox Sperrvermerk bis (Datum): (nur nach Abstimmung mit Betreuer/in)}
- \end{itemize}
-\end{spacing}
-
-\end{spacing}
-
-\signature
+% Erklärung zur Lizenzierung der Arbeit (lizenzierung.tex) anhängen
+\input{lizenzierung}
 
 \end{document}
