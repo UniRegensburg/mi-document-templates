@@ -50,7 +50,6 @@
 \usepackage{color}
 \usepackage{apacite}
 \usepackage{setspace}
-%\usepackage{titlesec}
 \usepackage{fancyhdr}
 \usepackage{nameref}
 \usepackage{pifont}
