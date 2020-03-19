@@ -51,18 +51,18 @@
 \newcommand{\getSecondReviewer}{}
 \newcommand{\getAdvisor}{}
 \newcommand{\getInstitute}{Institut für Information und Medien, Sprache und Kultur (I:IMSK)}
-\renewcommand{\author}[1]{\renewcommand{\getAuthor}{#1\\}}
+\renewcommand{\author}[1]{\renewcommand{\getAuthor}{#1}}
 \renewcommand{\title}[1]{\renewcommand{\getTitle}{#1}}
 \newcommand{\course}[1]{\renewcommand{\getCourse}{#1}}
 \newcommand{\semester}[1]{\renewcommand{\getSemester}{#1}}
 \newcommand{\dozent}[1]{\renewcommand{\getDozent}{#1}}
-\newcommand{\studid}[1]{\renewcommand{\getStudID}{#1\\}}
-\newcommand{\studSemester}[1]{\renewcommand{\getStudSemester}{#1\\}}
+\newcommand{\studid}[1]{\renewcommand{\getStudID}{#1}}
+\newcommand{\studSemester}[1]{\renewcommand{\getStudSemester}{#1}}
 \newcommand{\mail}[1]{\renewcommand{\getMail}{\href{mailto:#1}{#1}}}
 \newcommand{\studMail}[1]{\renewcommand{\getStudMail}{\href{mailto:#1}{#1}}}
 \newcommand{\keywords}[1]{\renewcommand{\getKeywords}{#1}}
 \newcommand{\module}[1]{\renewcommand{\getModule}{#1}}
-\newcommand{\address}[2]{\renewcommand{\getAddress}{#1\\#2}}
+\newcommand{\address}[2]{\renewcommand{\getAddress}{#1}}
 \newcommand{\phone}[1]{\renewcommand{\getPhone}{#1}}
 \newcommand{\dateHandedIn}[1]{\renewcommand{\getDateHandedIn}{#1}}
 \newcommand{\writemeta}{
@@ -117,7 +117,7 @@
 	framexrightmargin= -5.5mm,
 	numbers=left,
 	numberstyle=\ttfamily,
-	basicstyle=\ttfamily,
+    basicstyle=\linespread{1}\ttfamily,
 	backgroundcolor=\color[rgb]{1, 1, 1},
 	breaklines=true,
 	tabsize=2,

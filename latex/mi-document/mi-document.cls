@@ -50,12 +50,12 @@
 \usepackage{color}
 \usepackage{apacite}
 \usepackage{setspace}
-\usepackage{titlesec}
+%\usepackage{titlesec}
 \usepackage{fancyhdr}
 \usepackage{nameref}
 \usepackage{pifont}
 \usepackage[round]{natbib}
-\usepackage[a4paper,left=3.5cm,right=3.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[a4paper,left=3.5cm,right=3.5cm,top=3.0cm,bottom=2.5cm]{geometry}
 \usepackage{setspace}
 \usepackage{glossaries}
 \usepackage{multirow}
