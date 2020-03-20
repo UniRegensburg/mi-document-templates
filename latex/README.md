@@ -1,21 +1,71 @@
 # LaTeX Template für wissenschaftliche Arbeiten an der Universität Regensburg
 
-Dieses LaTeX Template ist nach den Vorgaben aus diesen Quellen erstellt worden:    
+Dieses LaTeX-Template ist nach den Vorgaben aus diesen Quellen erstellt worden:    
 - http://www.uni-regensburg.de/sprache-literatur-kultur/medieninformatik/medien/materialien/formatvorlage_seminararbeit_iw_mi_110124_v12_final.dotx.zip    
 - http://www.uni-regensburg.de/sprache-literatur-kultur/romanistik/medien/leitfaden_schriftliche_arbeiten.pdf
-- https://github.com/UniRegensburg/mi-document-templates (Word Vorlage)
+- https://github.com/UniRegensburg/mi-document-templates (Word-Vorlage)
 
 Dieses Template wird unregelmäßig aktualisiert und an die aktuelle Word-Vorlage angepasst. Vor der Verwendung sollte das Template mit der Word-Vorlage abgeglichen werden.
 
-## Installation
+Bei Fragen und Problemen mit dem Template, wenden Sie sich an andreas.schmid@ur.de.
 
-WIP
+Verbesserungen des Templates dürfen gerne über GitHub eingebracht werden.
 
-## Verwendung
-Um das Dokument kompilieren zu können wird XeLaTeX benötigt. Vom Template wird für Seminararbeiten und Abschlussarbeiten jeweils eine Variante bereitgestellt. Diese unterscheiden sich nur in der Gestaltung der Titelseite. Für eine Seminararbeit wird die Dokumentklasse ```mi-seminar``` bereitgestellt. Für Abschlussarbeiten ```mi-graduation```.    
+Das Template wurde unter Debian 10 mit TeXlive, TeXstudio, Texmaker und Overleaf getestet.
 
-Ein LaTeX Dokument für eine Seminararbeit muss also lediglich die Klasse ```mi-seminar``` verwenden:    
-    \documentclass{mi-seminar}
+## Installation und Verwendung
 
-Es können keine Parameter an die Dokumentklasse übergeben werden, da diese durch die Vorlage vorgegeben sind.    
-Für nähere Informationen zur Verwendung liegt ein Beispieldokument  ```document.tex``` bei.
+### Abhängigkeiten
+
+- Um das Template zu verwenden, empfehlen wir XeLaTeX. Dedizierte LaTeX-Editoren liefern dies bereits mit. Um das Template über die Kommandozeile kompilieren zu können, installieren Sie folgende Pakete händisch:
+
+```
+sudo apt install texlive
+sudo apt install texlive-xetex
+sudo apt install texlive-lang-german
+sudo apt install texlive-lang-science
+sudo apt install texlive-fonts-extra
+sudo apt install texlive-bibtex-extra
+```
+
+- Außerdem wird die Schriftart "Palatino Linotype" (normal, bold, italic, bold italic) benötigt.
+
+### Installation
+
+#### Linux + CLI
+
+- Kopieren Sie das Verzeichnis ```mi-document``` nach ```~/texmf/tex/latex/```.
+
+- Führen Sie im Verzeichnis des Templates (```document.tex```) das Kommando ```make``` aus - dadurch sollte ein PDF des Templates erstellt werden. Sollten Fehler aufgrund von fehlenden Paketen auftreten, installieren Sie diese. Wurde das PDF erfolgreich erstellt, so können Sie das Template für Ihre Arbeit verwenden.
+
+#### TeXstudio
+
+- Kopieren Sie alle Dateien aus dem Verzeichnis ```mi-document``` in das Verzeichnis, in dem sich auch die ```.tex```-Datei Ihrer Arbeit befindet (beispielsweise die Vorlage ```document.tex```).
+
+- Stellen Sie in TexStudio den *Default Compiler* auf *XeLaTeX* (Options -> Configure TeXstudio -> Build)
+
+- Sollten Fehler aufgrund von fehlenden Paketen auftreten, installieren Sie diese.
+
+#### Texmaker
+
+- Kopieren Sie das Verzeichnis ```mi-document``` nach ```~/texmf/tex/latex/``` (Linux!).
+
+- Verwenden Sie *XeLaTeX* als Compiler. Diesen können Sie unter "Options -> Configure Texmaker -> Quick Build" einstellen.
+
+### Overleaf
+
+- Laden Sie das gezippte Template (im Verzeichnis *Overleaf*) hoch.
+
+- Stellen Sie den Compiler auf XeLaTeX um ("Menu -> Compiler").
+
+- Kompilieren Sie ```document.tex```.
+
+- Beachten Sie, dass im Overleaf-Template eine andere Schriftart ("PT Serif") verwendet wird, da "Palatino" standardmäßig nicht in Overleaf enthalten wird. Sie können diese jedoch manuell hinzufügen und in ```mi-document.sty``` anpassen.
+
+### Verwendung
+
+- Im Dokument ```document.tex``` finden Sie Informationen zur Verwendung des Template. Wir empfehlen Ihnen, Ihre Arbeit auf dieses Dokument aufzubauen.
+
+- Verwenden Sie die Dokumentklasse ```mi-seminar``` für Seminararbeiten und ```mi-graduation``` für Abschlussarbeiten. Diese unterscheiden Sich größtenteils in der Gestaltung der Titelseite.
+
+- Im Repository finden Sie außerdem ein ausführliches PDF zu den Gestaltungsrichtlinien von Seminar- und Abschlussarbeiten.
