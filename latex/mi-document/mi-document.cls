@@ -24,7 +24,10 @@
 \ProvidesClass{mi-document}[2020/03/19 v1.1 mi-document]
 \LoadClass[11pt,a4paper,oneside,ngerman]{scrartcl}
 
-%\usepackage[T1]{fontenc}
+
+\usepackage{DejaVuSans}
+\usepackage{tgpagella}
+\usepackage[T1]{fontenc}
 \usepackage{fontspec}
 \usepackage{unicode-math}
 \usepackage{ngerman}
