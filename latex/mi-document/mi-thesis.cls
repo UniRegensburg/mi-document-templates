@@ -21,6 +21,6 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\ProvidesClass{mi-graduation}[2020/03/19 v1.1 mi-graduation]
+\ProvidesClass{mi-thesis}[2020/03/19 v1.1 mi-thesis]
 \LoadClass[12pt,a4paper,oneside,ngerman]{mi-document}
-\usepackage{mi-graduation}
+\usepackage{mi-thesis}

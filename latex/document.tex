@@ -1,4 +1,4 @@
-\documentclass{mi-graduation}
+\documentclass{mi-thesis}
 
 \bachelor % im Falle einer Masterarbeit \master
 
@@ -21,7 +21,10 @@
 \studMail{[Emailadresse (z.B.: max.mustermann@stud.uni-regensburg.de)]}
 \dateHandedIn{[Abgabetermin der Arbeit]}
 \keywords{Enter;key;words;here}
+
 \writemeta
+
+\bibliographystyle{apacite}
 
 \begin{document}
 
@@ -57,52 +60,26 @@ A summary in English. It should be more or less similar to the German Zusammenfa
 \newpage
 \pagestyle{fancy}
 
-\section{Über dieses Dokument}
-Dieses Dokument soll Ihnen den Einstieg beim Verfassen einer Studienarbeit erleichtern.
-Die Vorgaben sind als Empfehlungen zu verstehen, können aber bei Bedarf in Absprache mit den Dozenten angepasst und erweitert werden.
-Hier steht ein Beispielabschnitt.
-Die Schriftart ist Palatino Linotype, die Schriftgröße 11pt.
-Ein Verweis auf eine Abbildung (vgl. \nameref{img:norman2010}) wird in diesem Satz verdeutlicht.
-Alternativ eignen sich auch Serifenschriftarten wie Garamond, Times New Roman oder Frutiger Serif Pro.
-Querverweise (vgl. \nameref{section:2}) werden in diesem Satz  gezeigt.
-Der erste Absatz jedes Abschnitts und Absätze nach Abbildungen werden nicht eingerückt (Formatvorlage ist Standard).
-Ein weiterer Absatz wird durch Drücken der Return-Taste erzeugt und automatisch eingerückt.
-Absätze werden also nicht durch Leerzeilen, sondern durch Einrücken des Folgeabsatzes getrennt.
-Die Folgeabsätze erhalten automatisch die Formatvorlage Folgeabsatz.
-In dieser Vorlage können auch Codeschnipsel eingesetzt und referenziert werden (vgl. Codebeispiel: \nameref{helloworld}).
+% hier beginnt der eigentliche Inhalt der Arbeit
 
-In der Kopfzeile erscheint immer der Text der aktuellen Überschrift, die mit der Formatvorlage „Überschrift 1“ formatiert wird. Somit wird dem Leser die Orientierung in der Arbeit erleichtert.\\
+%\input{ueber_dieses_dokument}
 
-\begin{figure}[h!]
-    \center{
-	    \img{demo.jpg}{300pt}
-	}
-	\caption{Blümchen \citep{Norman:2002}}
-	\label{img:norman2010}
-\end{figure}
-
-Anschließend noch zwei Unterüberschriften und ein Codebeispiel.
-
-\subsection{Abschnitt 2}\label{section:2}
-Ein Beispiel für ein Codeschnipsel in Python.\\
-
-\begin{lstlisting}[captionpos=b, belowcaptionskip=4pt, caption=Hello World (Python), label=helloworld, language=Python]
-print("Hello World")
-\end{lstlisting}
-
-Ein Beispiel für ein Codeschnipsel in Java.\\
-
-\begin{lstlisting}[captionpos=b, belowcaptionskip=4pt, caption=Hello World (Java), language=Java]
-public class Main {
-	public static void main(String[] args){
-		System.out.println("Hello World");
-	}
-}
-\end{lstlisting}
+\input{aufgabenstellung}
+\newpage
+\input{einleitung}
+\newpage
+\input{ziele}
+\input{stand_der_technik}
+\newpage
+\input{gestaltungsrichtlinien}
+\newpage
+\input{empfehlungen}
+\newpage
+\input{zusammenfassung}
 
 \newpage
 % Literaturverzeichnis anzeigen
-\bibliographystyle{apacite}
+%\bibliographystyle{apacite}
 \bibliography{literature}
 
 \newpage

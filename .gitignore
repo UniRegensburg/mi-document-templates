@@ -160,3 +160,6 @@ TSWLatexianTemp*
 
 # VIM swap file
 *.swp
+
+notes.md
+build_overleaf

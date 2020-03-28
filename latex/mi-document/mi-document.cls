@@ -27,11 +27,11 @@
 
 \usepackage{DejaVuSans}
 \usepackage{tgpagella}
+\usepackage[scaled]{helvet}
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
 \usepackage{unicode-math}
 \usepackage{ngerman}
-% AS: xltxtra has to be BEFORE xunicode to prevent errors with captions (\nobreakspace)
 \usepackage{xltxtra}
 \usepackage{xunicode}
 \usepackage{polyglossia}
@@ -56,11 +56,13 @@
 \usepackage{fancyhdr}
 \usepackage{nameref}
 \usepackage{pifont}
-\usepackage[round]{natbib}
+\usepackage{natbib}
 \usepackage[a4paper,left=3.5cm,right=3.5cm,top=3.0cm,bottom=2.5cm]{geometry}
 \usepackage{setspace}
 \usepackage{glossaries}
 \usepackage{multirow}
+\usepackage{tocloft}
+\usepackage{bibentry}
 
 \usepackage{mi-colors}
 \usepackage{mi-language-processing}
