@@ -63,6 +63,8 @@
 \usepackage{multirow}
 \usepackage{tocloft}
 \usepackage{bibentry}
+\usepackage{enumitem}
+\usepackage{imakeidx} % Stichwortverzeichnis
 
 \usepackage{mi-colors}
 \usepackage{mi-language-processing}

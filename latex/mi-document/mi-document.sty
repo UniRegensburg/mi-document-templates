@@ -111,6 +111,11 @@
     \includegraphics[width=#2]{{images/#1}}
 }
 
+% lower line spacing for lists
+\setlist[enumerate]{itemsep=0mm}
+\setlist[itemize]{itemsep=0mm}
+\setlist[description]{itemsep=0mm}
+
 % create a image figure
 % param 1: image file name (without extension)
 % param 2: figure description
@@ -121,6 +126,27 @@
         \caption{#2}
         \label{fig:#1}
     \end{figure}
+}
+
+% table of contents should not have page numbers
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\addtocontents{lof}{\protect\thispagestyle{empty}}
+\addtocontents{lot}{\protect\thispagestyle{empty}}
+
+% commands to create unnumbered sections that also appear in the table of contents
+\newcommand{\usection}[1]{
+    \addcontentsline{toc}{section}{#1}
+    \section*{#1}
+}
+
+\newcommand{\usubsection}[1]{
+    \addcontentsline{toc}{subsection}{#1}
+    \subsection*{#1}
+}
+
+\newcommand{\usubsubsection}[1]{
+    \addcontentsline{toc}{subsubsection}{#1}
+    \subsubsection*{#1}
 }
 
 \lstloadlanguages{Python}

@@ -26,24 +26,34 @@
 
 \bibliographystyle{apacite}
 
-\begin{document}
+\makeindex[columns=2, intoc, title=Stichwortverzeichnis (optional{,} in der Regel nicht notwendig), options=-s indexstyle]
 
-% Das Deckblatt erstellen
-\maketitle
+\begin{document}
 
 % Die Nummerierung beginnt mit der Titelseite (= Seite 1), soll aber erst ab der ersten Inhaltsseite (Einleitung) angezeigt werden.
 \pagestyle{empty}
 
-%\defaultStretch % Zeilenabstand auf 1.5
-\doublespacing % doppelter Zeilenabstand sieht mehr nach 1.5 fachem aus
+% Deckblatt des Templates und Hinweise
+% diese Zeile für die Verwendung des Templates entfernen!
+\input{hinweise}
+
+% Das Deckblatt erstellen
+\maketitle
+
 \newpage
+
+\onehalfspacing
 
 \tableofcontents % Optional
 \newpage
 \listoffigures % Optional
 \newpage
+\listoftables % Optional
+\newpage
 \lstlistoflistings % Optional
 \newpage
+
+\doublespacing % doppelter Zeilenabstand sieht mehr nach 1.5 fachem aus
 
 \summary
 Bachelor- und Masterarbeiten beginnen mit einer Zusammenfassung in einer deutschen und englischen Version.
@@ -62,8 +72,6 @@ A summary in English. It should be more or less similar to the German Zusammenfa
 
 % hier beginnt der eigentliche Inhalt der Arbeit
 
-%\input{ueber_dieses_dokument}
-
 \input{aufgabenstellung}
 \newpage
 \input{einleitung}
@@ -77,17 +85,38 @@ A summary in English. It should be more or less similar to the German Zusammenfa
 \newpage
 \input{zusammenfassung}
 
+% Kapitelbezeichnung in der rechten oberen Ecke entfernen
 \newpage
-% Literaturverzeichnis anzeigen
-%\bibliographystyle{apacite}
-\bibliography{literature}
+\pagestyle{plain}
 
+% Literaturverzeichnis anzeigen
+\addcontentsline{toc}{section}{Literaturverzeichnis}
+{
+    \onehalfspacing % kleinerer Zeilenabstand um Platz zu sparen
+    \bibliography{literature}
+}
+
+% Anhang
 \newpage
+\input{anhang}
+
 % Erklärung zur Urherberschaft (urheberschaft.tex) anhängen
+\newpage
 \input{urheberschaft}
 
-\newpage
 % Erklärung zur Lizenzierung der Arbeit (lizenzierung.tex) anhängen
+\newpage
 \input{lizenzierung}
+
+% Stichwortverzeichnis anzeigen. Weiß nicht, warum das nicht nach dem Inhaltsverzeichnis kommt.
+{
+    \onehalfspacing
+    \newpage
+    \printindex
+}
+
+% Inhalt des Datenträgers. Gehört meiner Meinung nach zum Anhang, aber was weiß ich schon. AS
+\newpage
+\input{datenträger}
 
 \end{document}
