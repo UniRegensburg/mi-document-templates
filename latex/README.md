@@ -52,7 +52,9 @@ sudo apt install texlive-bibtex-extra
 
 ### Overleaf
 
-- Laden Sie das gezippte Template (im Verzeichnis *Overleaf*) hoch.
+- Zippen Sie den gesamten Inhalt des *latex*-Ordners.
+
+- Erstellen Sie in Overleaf ein neues Projekt ("New Project -> Upload Project") und laden Sie das gezippte Template hoch.
 
 - Stellen Sie den Compiler auf XeLaTeX um ("Menu -> Compiler").
 
