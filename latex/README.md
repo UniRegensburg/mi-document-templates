@@ -28,8 +28,6 @@ sudo apt install texlive-fonts-extra
 sudo apt install texlive-bibtex-extra
 ```
 
-- Außerdem wird die Schriftart "Palatino Linotype" (normal, bold, italic, bold italic) benötigt.
-
 ### Installation
 
 #### Linux + CLI
@@ -60,12 +58,10 @@ sudo apt install texlive-bibtex-extra
 
 - Kompilieren Sie ```document.tex```.
 
-- Beachten Sie, dass im Overleaf-Template eine andere Schriftart ("PT Serif") verwendet wird, da "Palatino" standardmäßig nicht in Overleaf enthalten wird. Sie können diese jedoch manuell hinzufügen und in ```mi-document.sty``` anpassen.
-
 ### Verwendung
 
 - Im Dokument ```document.tex``` finden Sie Informationen zur Verwendung des Template. Wir empfehlen Ihnen, Ihre Arbeit auf dieses Dokument aufzubauen.
 
-- Verwenden Sie die Dokumentklasse ```mi-seminar``` für Seminararbeiten und ```mi-graduation``` für Abschlussarbeiten. Diese unterscheiden Sich größtenteils in der Gestaltung der Titelseite.
+- Die Kommentare in ```document.tex``` sowie der Inhalt der Formatvorlage geben Ihnen Hinweise zur Verwendung des Templates und zur Gestaltung Ihrer Arbeit.
 
-- Im Repository finden Sie außerdem ein ausführliches PDF zu den Gestaltungsrichtlinien von Seminar- und Abschlussarbeiten.
+- Verwenden Sie die Dokumentklasse ```mi-seminar``` für Seminararbeiten und ```mi-graduation``` für Abschlussarbeiten. Diese unterscheiden Sich größtenteils in der Gestaltung der Titelseite.

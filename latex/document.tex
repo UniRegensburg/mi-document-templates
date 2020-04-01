@@ -26,7 +26,8 @@
 
 \bibliographystyle{apacite}
 
-\makeindex[columns=2, intoc, title=Stichwortverzeichnis (optional{,} in der Regel nicht notwendig), options=-s indexstyle]
+% Stichwortverzeichnis erstellen
+\makeindex[columns=2, intoc, title=Stichwortverzeichnis, options=-s indexstyle]
 
 \begin{document}
 
@@ -55,20 +56,10 @@
 
 \doublespacing % doppelter Zeilenabstand sieht mehr nach 1.5 fachem aus
 
-\summary
-Bachelor- und Masterarbeiten beginnen mit einer Zusammenfassung in einer deutschen und englischen Version.
-Die Zusammenfassung gibt einen Überblick über Thema und Resultate der Arbeit.
-Inhaltlich werden die Zielsetzung, die Methodik, die einzelnen Arbeitsschritte bzw. Gliederungspunkte und die Ergebnisse der Arbeit widergegeben.
-
-Schlecht: „Schon immer haben Menschen Zusammenfassungen geschrieben [Platitüde, keine Zusammenfassung]. In dieser Arbeit wurde in mehreren Studien untersucht, wie Zusammenfassungen wirken. [Was genau wurde untersucht? Was waren die Ergebnisse?]“
-
-Besser: „In dieser Arbeit wurde untersucht, inwiefern das Lesen von Zusammenfassungen das Lesen des kompletten Dokuments ersetzen kann. Dazu wurden zwei Studien mit jeweils 17 Teilnehmern durchgeführt. In der ersten wurde [...]. Diese Ergebnisse zeigen, dass Bedienungsanleitungen und Bilderbücher weniger gut über Zusammenfassungen erschlossen werden können, als Romane oder Sachbücher.“
-
-\abstract
-A summary in English. It should be more or less similar to the German Zusammenfassung. Avoid too verbatim translations („In this work it was examined how the reading of ...“)
+\input{abstract}
 
 \newpage
-\pagestyle{fancy}
+\pagestyle{fancy} % Seitennummern und Kapitelbezeichnungen anzeigen
 
 % hier beginnt der eigentliche Inhalt der Arbeit
 
@@ -77,6 +68,7 @@ A summary in English. It should be more or less similar to the German Zusammenfa
 \input{einleitung}
 \newpage
 \input{ziele}
+\newpage
 \input{stand_der_technik}
 \newpage
 \input{gestaltungsrichtlinien}
