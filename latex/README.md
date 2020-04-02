@@ -73,7 +73,7 @@ sudo apt install texlive-bibtex-extra
 - Kompilieren Sie ```document.tex```.
 
 
-##### MacTex + TexShop (getestet unter 10.15.3, Catalina)
+#### MacTex + TexShop (getestet unter 10.15.3, Catalina)
 
 - Klonen Sie den aktuellen Stand des Repositories und wechseln in den ```latex```Ordner
 
