@@ -72,6 +72,21 @@ sudo apt install texlive-bibtex-extra
 
 - Kompilieren Sie ```document.tex```.
 
+
+##### MacTex + TexShop (getestet unter 10.15.3, Catalina)
+
+- Klonen Sie den aktuellen Stand des Repositories und wechseln in den ```latex```Ordner
+
+- Kopieren Sie den Inhalt von ```mi-document``` in diesen Ordner
+
+- Führen Sie ```make```aus
+
+- Installieren Sie manuell die Fonts **DejaVuSans**, **GyreTex Pagella** und **Nimbus Sans** (z.B. von https://fontsquirrel.com)
+
+- Öffnen Sie ```document.tex``` in TexShop
+
+- Wechseln Sie den Compiler in TexShop auf ```XeLatTex``
+
 ### Verwendung
 
 - Im Dokument ```document.tex``` finden Sie Informationen zur Verwendung des Template. Wir empfehlen Ihnen, Ihre Arbeit auf dieses Dokument aufzubauen.
