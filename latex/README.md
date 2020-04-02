@@ -17,7 +17,11 @@ Das Template wurde unter Debian 10 mit TeXlive, TeXstudio, Texmaker und Overleaf
 
 ### Abhängigkeiten
 
-- Um das Template zu verwenden, empfehlen wir XeLaTeX. Dedizierte LaTeX-Editoren liefern dies bereits mit. Um das Template über die Kommandozeile kompilieren zu können, installieren Sie folgende Pakete händisch:
+- Um das Template zu verwenden, wird TeX Live benötigt. Dies muss separat installiert werden. Unter Windows kann es sein, dass außerdem MiKTeX benötigt wird.
+
+- Als LaTeX-Compiler empfehlen wir XeLaTeX. Dedizierte LaTeX-Editoren liefern dies bereits mit.
+
+- Installation von TeX Live und XeLaTeX unter Linux:
 
 ```
 sudo apt install texlive
@@ -27,6 +31,8 @@ sudo apt install texlive-lang-science
 sudo apt install texlive-fonts-extra
 sudo apt install texlive-bibtex-extra
 ```
+
+- Unter anderen Betriebssystemen müssen TeX Live, MiKTeX und Editoren von den jeweiligen Websites heruntergeladen und installiert werden.
 
 ### Installation
 
@@ -46,11 +52,17 @@ sudo apt install texlive-bibtex-extra
 
 #### Texmaker
 
-- Kopieren Sie das Verzeichnis ```mi-document``` nach ```~/texmf/tex/latex/``` (Linux!).
+- Installieren Sie MiKTeX.
+
+- Installieren Sie über MiKTeX die Pakete ```tex-gyre```, ```nimbus15``` und ```dejavu-otf```.
+
+- Linux: Kopieren Sie das Verzeichnis ```mi-document``` nach ```~/texmf/tex/latex/```.
+
+- Windows: Kopieren Sie den Inhalt des Verzeichnis ```mi-document``` in dessen Elternverzeichnis (welches ```document.tex``` enthält).
 
 - Verwenden Sie *XeLaTeX* als Compiler. Diesen können Sie unter "Options -> Configure Texmaker -> Quick Build" einstellen.
 
-### Overleaf
+#### Overleaf
 
 - Zippen Sie den gesamten Inhalt des *latex*-Ordners.
 
