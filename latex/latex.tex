@@ -1,0 +1,287 @@
+\usection{Anhang B: Tipps für \LaTeX}\label{latex}
+
+Hier finden Sie gesammelte Hinweise, die sich speziell auf das \LaTeX-Template und dessen Verwendung beziehen. Der Aufbau des Templates wird dargelegt und wichtige Befehle werden anhand von Beispielen erklärt.
+
+\usubsection{Struktur des Templates}
+
+\begin{description}
+    \item[mi-document/]{Dieses Verzeichnis enthält die Style- und Class-Files, die das eigentliche Template darstellen. In diesen werden Pakete importiert, Formatierungen definiert und zusätzliche Funktionen bereitgestellt. Manche Entwicklungsumgebungen für \LaTeX, wie TeXmaker und TeXstudio, finden diese Dateien leider nur, wenn sie sich im gleichen Verzeichnis befinden wie \verb|document.tex|. In diesem Fall müssen alle \verb|.sty|- und \verb|.cls|-Dateien in dessen Verzeichnis verschoben werden.}
+    \item[document.tex]{Diese Datei enthält den Quellcode für dieses Dokument. Es wird empfohlen, Arbeiten auf diese Datei aufzubauen. In den ersten Zeilen werden Variablen definiert (z.B. Autor, Titel der Arbeit, etc.), welche vom Template beispielsweise für das Deckblatt und Metadaten verwendet werden. Danach werden Inhalts-, Abbildungs-, Tabellen- und Codeverzeichnis angezeigt. Der tatsächliche Inhalt der Arbeit kann direkt in diese Datei geschrieben werden, es wird jedoch empfohlen, Kapitel auf verschiedene Dateien aufzuteilen und über den \verb|\input|-Befehl einzubinden.}
+    \item[lizenzierung.tex]{Hier werden Lizenzen für die schriftliche Ausarbeitung und den Code der Arbeit sowie ein eventueller Sperrvermerk (nur nach Absprache!) angegeben. Passen Sie diese Datei so an, dass sie auf Ihre Arbeit zutrifft. Mit den Befehlen \verb|\checkboxEmpty| und \verb|\checkboxChecked| können leere und angekreuzte Kästchen erstellt werden.}
+    \item[hinweise.tex]{Diese Datei enthält die Präambel dieser Formatvorlage und sollte \textbf{nicht} in Ihrer fertigen Arbeit enthalten sein. Entfernen Sie dazu den Import dieser Datei aus \verb|document.tex|.}
+    \item[*.tex]{Die anderen \verb|.tex|-Dateien enthalten den Inhalt dieses Dokuments (eine Datei pro Kapitel). Sie werden von \verb|document.tex| importiert.}
+    \item[images/]{Bilddateien in diesem Verzeichnis können als Abbildungen in ein \LaTeX-Dokument eingebunden werden.}
+\end{description}
+
+\usubsection{Wichtige Befehle}
+
+\usubsubsection{Sections, Subsections, etc.}
+
+Die Abschnitte eines \LaTeX-Dokuments werden in \textit{sections}, \textit{subsections} und \textit{subsubsections} aufgeteilt.
+Diese Abschnitte werden automatisch mit einer fortlaufenden Nummerierung versehen und im Inhaltsverzeichnis aufgeführt.
+Die Syntax der Befehle lautet wie folgt:
+
+\begin{verbatim}
+\section{Kapitelname}                 % z.B. 4 Gestaltungsrichtlinien
+\subsection{Unterkapitelname}         % z.B. 4.3 Formatierung
+\subsubsection{Unterunterkapitelname} % z.B. 4.3.3 Abbildungen
+\end{verbatim}
+
+Es wir empfohlen, Abschnitte außerdem mit Labels zu versehen, damit sie im späteren Verlauf der arbeit einfacher referenziert werden können:
+
+\begin{verbatim}
+\section{Kapitelname}\label{sec:Kapitelname} % Label wird gesetzt
+\ref{sec:Kapitelname}                        % Referenz auf das Label
+\end{verbatim}
+
+Das die Referenz wird im Fließtext durch die \textbf{Kapitelnummer} ersetzt, sodass eine Syntax wie \verb|(siehe Kapitel \ref{Kapitelname})| empfohlen wird.
+
+Ist ein Abschnitt \textbf{ohne} Nummerierung gewünscht, so können die Befehle \verb|\usection|, \verb|\usubsection| und \verb|usubsubsection| benutzt werden.
+Die damit erstellten Abschnitte werden trotzdem im Inhaltsverzeichnis aufgeführt.
+Syntaktisch entsprechen diese Befehle \verb|section| etc.
+
+\usubsubsection{Listen}
+
+\LaTeX stellt drei verschiedene Arten von Listen bereit: Aufzählungen \textit{(itemize)}, nummerierte Aufzählungen \textit{(enumerate)} und Beschreibungen \textit{(description)}.
+Beispielhaft werden hier Quellcode und Resultat dargestellt:
+
+\textbf{\large{Aufzählung}}
+
+\begin{verbatim}
+\begin{itemize}
+    \item{Das ist der erste Punkt.}
+    \item{Das ist der zweite Punkt.}
+    \item{Das ist der dritte Punkt.}
+\end{itemize}
+\end{verbatim}
+
+\begin{itemize}
+    \item{Das ist der erste Punkt.}
+    \item{Das ist der zweite Punkt.}
+    \item{Das ist der dritte Punkt.}
+\end{itemize}
+
+\textbf{\large{Nummerierte Aufzählung}}
+
+\begin{verbatim}
+\begin{enumerate}
+    \item{Das ist der erste Punkt.}
+    \item{Das ist der zweite Punkt.}
+    \item{Das ist der dritte Punkt.}
+\end{enumerate}
+\end{verbatim}
+
+\begin{enumerate}
+    \item{Das ist der erste Punkt.}
+    \item{Das ist der zweite Punkt.}
+    \item{Das ist der dritte Punkt.}
+\end{enumerate}
+
+\textbf{\large{Beschreibung}}
+
+\begin{verbatim}
+\begin{description}
+    \item[Erstens]{Das ist der erste Punkt.}
+    \item[Zweitens]{Das ist der zweite Punkt.}
+    \item[Drittens]{Das ist der dritte Punkt.}
+\end{description}
+\end{verbatim}
+
+\begin{description}
+    \item[Erstens]{Das ist der erste Punkt.}
+    \item[Zweitens]{Das ist der zweite Punkt.}
+    \item[Drittens]{Das ist der dritte Punkt.}
+\end{description}
+
+Unterpunkte können erstellt werden, indem innerhalb einer Liste eine neue Liste erstellt wird:
+
+\begin{verbatim}
+\begin{itemize}
+    \item{Das ist der erste Punkt.}
+    \item{Das ist der zweite Punkt.}
+    \begin{itemize}
+        \item{Das ist ein Unterpunkt.}
+        \item{Das ist noch ein Unterpunkt.}
+    \end{itemize}
+\end{itemize}
+\end{verbatim}
+
+\begin{itemize}
+    \item{Das ist der erste Punkt.}
+    \item{Das ist der zweite Punkt.}
+    \begin{itemize}
+        \item{Das ist ein Unterpunkt.}
+        \item{Das ist noch ein Unterpunkt.}
+    \end{itemize}
+\end{itemize}
+
+\usubsubsection{Abbildungen, Tabellen und Code}
+
+\textbf{\large{Abbildungen}}
+
+Um eine Abbildung einzufügen, werden normalerweise folgende Befehle verwendet:
+
+\begin{verbatim}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{{images/dateiname}}
+    \caption{Bildbeschreibung}
+    \label{fig:label}
+\end{figure}
+\end{verbatim}
+
+Dieses Template enthält jedoch eine Funktion, die dieses Kontrukt auf einen Einzeiler reduziert:
+
+\begin{verbatim}
+\image{dateiname}{Bildbeschreibung}
+\end{verbatim}
+
+Dabei ist zu beachten, dass das Label der Abbildung in diesem Fall immer dem Dateinamen (ohne Extension) entspricht.
+
+Das Ergebnis beider Varianten sieht so aus:
+
+\image{blume}{Bildbeschreibung}
+
+\textbf{\large{Tabellen}}
+
+Tabellen in \LaTeX zu erstellen mag anfangs etwas umständlich erscheinen, sie bieten jedoch sehr viel gestalterische Möglichkeiten.
+Sie bestehen im Grunde aus zwei verschachtelten Environments:
+
+Das äußere \textit{table}-Environment enthält Anweisungen zum Kontext der Tabelle, beispielsweise Label, Tabellenbeschreibung und die Platzierung im Text.
+
+Innerhalb dessen befindet sich mit dem \textit{tabular}-Environment die eigentliche Tabelle.
+Dessen Parameter bestimmen die Anzahl der Spalten, sowie die Ausrichtung der Inhalte dieser.
+Über \verb|\hline| können horizontale Linien eingebaut werden.
+Die Inhalte werden Zeilenweise (getrennt durch \verb|\\|) hinzugefügt und diese Zeilen werden durch das \verb|&|-Symbol in Spalten unterteilt.
+Es wird empfohlen, die Tabelle zusätzlich noch in \verb|{\renewcommand{\arraystretch}{1.5} ...Inhalt...}| einzuschließen, um den Zeilenabstand zu erhöhen.
+
+\begin{verbatim}
+{\renewcommand{\arraystretch}{1.5}
+\begin{table}[h!]
+\centering
+\begin{tabular}{ l|l } 
+\hline
+    \textbf{Erste Spalte} & \textbf{Zweite Spalte} \\
+\hline
+Erste Zeile & lorem \\
+Zweite Zeile & ipsum \\
+Dritte Zeile & dolor \\
+\hline
+\end{tabular}
+\caption{Tabellenbeschreibung}
+\label{table:label_der_tabelle}
+\end{table}}
+\end{verbatim}
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{table}[h!]
+\centering
+\begin{tabular}{ l|l } 
+\hline
+    \textbf{Erste Spalte} & \textbf{Zweite Spalte} \\
+\hline
+Erste Zeile & lorem \\
+Zweite Zeile & ipsum \\
+Dritte Zeile & dolor \\
+\hline
+\end{tabular}
+\caption{Tabellenbeschreibung}
+\label{table:label_der_tabelle}
+\end{table}}
+
+\textbf{\large{Code}}
+
+Um Code einzubinden, wird das \verb|lstlisting|-Environment verwendet.
+Über Parameter können Metadaten wie die Programmiersparche (wichtig für korrektes Syntax-Highlighting), die Beschreibung und das Label festgelegt werden.
+
+\begin{verbatim}
+\begin{lstlisting}[language=C++,
+                   caption={Beschreibung des Codebeispiels},
+                   captionpos=b,
+                   label=code:code_label]
+#include <stdio.h>
+
+int main()
+{
+    printf("Hallo Welt!\n");
+}
+\end{lstlisting}
+\end{verbatim}
+
+\begin{lstlisting}[language=C++,
+                   caption={Beschreibung des Codebeispiels},
+                   captionpos=b,
+                   label=code:code_label]
+#include <stdio.h>
+
+int main()
+{
+    printf("Hallo Welt!\n");
+}
+\end{lstlisting}
+
+Über das \verb|verbatim|-Environment kann mehrzeiliger Code \textbf{ohne} Syntax-Highlighting, Beschreibung und Label eingebunden werden.
+
+\verb|\begin{verbatim}|
+
+\verb|Dieser Text ist in einer Monosaced-Schriftart geschrieben.|
+
+\verb|Könnte z.B. für Pseudocode nützlich sein.|
+
+\verb|\end{verbatim}|
+
+\begin{verbatim}
+Dieser Text ist in einer Monosaced-Schriftart geschrieben.
+Könnte z.B. für Pseudocode nützlich sein.
+\end{verbatim}
+
+Sollen nur einzelne Wörter monospaced angezeigt werden, kann auf \verb!\verb|text|! zurückgegriffen werden: \verb|text|.
+
+\usubsubsection{Zitate und Fußnoten}
+
+\textbf{\large{Zitate im Text}}
+
+Zitate im Text und Einträge im Literaturverzeichnis werden aus Einträgen einer \textit{BibTeX}-Datei generiert.
+Diese kann entweder selbst zusammengestellt, oder aus einem Programm zu Literatuverwaltung (z.B. Zotero, Mendeley, Citavi) exportiert werden.
+
+Um eine Quelle zu zitieren, können folgende Befehle verwendet werden:
+
+\bigskip
+
+\begin{tabular}{ l|l }
+\hline
+\textbf{Befehl} & \textbf{Ergebnis} \\
+\hline
+    \verb|\cite{mustermann2013test}| & \cite{mustermann2013test} \\
+    \verb|\cite[]{mustermann2013test}| & \cite[]{mustermann2013test} \\
+    \verb|\cite[S. 15]{mustermann2013test}| & \cite[S. 15]{mustermann2013test} \\
+    \verb|\citet[S. 15]{mustermann2013test}| & \citet[S. 15]{mustermann2013test} \\
+\hline
+\end{tabular}
+
+\bigskip
+
+Einträge im Literaturverzeichnis werden automatisch erstellt, wenn eine Quelle zitiert wird.
+
+\textbf{\large{Blockzitate}}
+
+Blockzitate werden mit dem \verb|quote|-Environment umschlossen.
+Sie sollten mit einem Verweis auf die Literaturquelle beendet werden.
+
+\begin{verbatim}
+\begin{quote}
+«Wenn die Wurst so dick wie das Brot ist, ist es wurst wie dick das Brot ist.»
+\cite[S. 4]{mustermann2013test}
+\end{quote}
+\end{verbatim}
+
+\begin{quote}
+«Wenn die Wurst so dick wie das Brot ist, ist es wurst wie dick das Brot ist.»
+\cite[S. 4]{mustermann2013test}
+\end{quote}
+
+\textbf{\large{Fußnoten}}
+
+Fußnoten werden über den \verb|\footnote{Inhalt der Fußnote}|-Befehl erstellt und automatisch nummeriert. Beispiel:
+
+Informationen zum Studium der Medieninformatik an der Universität Regensburg finden Sie auf der Website des Lehrstuhls\footnote{https://www.uni-regensburg.de/sprache-literatur-kultur/medieninformatik/}.
