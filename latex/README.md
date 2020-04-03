@@ -11,8 +11,6 @@ Bei Fragen und Problemen mit dem Template, wenden Sie sich an andreas.schmid@ur.
 
 Verbesserungen des Templates dürfen gerne über GitHub eingebracht werden.
 
-Das Template wurde unter Debian 10 mit TeXlive, TeXstudio, Texmaker und Overleaf getestet.
-
 ## Installation und Verwendung
 
 ### Abhängigkeiten
@@ -85,7 +83,7 @@ sudo apt install texlive-bibtex-extra
 
 - Öffnen Sie ```document.tex``` in TexShop
 
-- Wechseln Sie den Compiler in TexShop auf ```XeLatTex``
+- Wechseln Sie den Compiler in TexShop auf ```XeLaTeX```
 
 ### Verwendung
 
