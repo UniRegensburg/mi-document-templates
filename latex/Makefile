@@ -1,22 +1,13 @@
-all: render
+BASE=document
+export TEXINPUTS := .:./mi-document:
 
-render:
-	xelatex document.tex
-	bibtex document
-	xelatex document.tex
-	xelatex document.tex
+all: ${BASE}.pdf
+
+${BASE}.pdf:
+	xelatex ${BASE}.tex
+	bibtex ${BASE}
+	xelatex ${BASE}.tex
+	xelatex ${BASE}.tex
 
 clean:
-	rm *.aux
-	rm *.bbl
-	rm *.blg
-	rm *.idx
-	rm *.ilg
-	rm *.ind
-	rm *.lof
-	rm *.log
-	rm *.lol
-	rm *.lot
-	rm *.out
-	rm *.pdf
-	rm *.toc
+	-rm ${BASE}.aux ${BASE}.bbl ${BASE}.blg ${BASE}.idx ${BASE}.ilg ${BASE}.ind ${BASE}.lof ${BASE}.log ${BASE}.lol ${BASE}.lot ${BASE}.out ${BASE}.pdf ${BASE}.toc
