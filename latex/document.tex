@@ -1,14 +1,16 @@
-\documentclass{mi-graduation}
+\documentclass{mi-thesis}
 
-\bachelor
-\title{[Titel der Bachelor-/ Masterarbeit, ggf. auch über mehrere Zeilen hinweg.]}
-\author{[Autor der Arbeit]}
+\bachelor % im Falle einer Masterarbeit \master
+
+% Variablen, die für das Deckblatt und Metadaten verwendet werden
+\title{[Titel der Bachelor-/ Masterarbeit]}
+\author{[Autor*in der Arbeit]}
 \semester{[WS / SS und Jahreszahl]}
 \course{[Art des Seminars und Seminartitel (z.B. Praktikum Multimedia Engineering)]}
 \module{[z.B. MEI-M 04 (B.A.)]}
 \dozent{[Seminarleiter]}
 \studid{[Matrikelnummer]}
-\studSemester{[Semesterzahl und Studiengänge (z.B. 3. Semester B.A. Medieninformatik / In-formationswissenschaft)]}
+\studSemester{[Semesterzahl und Studiengänge (z.B. 3. Semester B.A. Medieninformatik / Informationswissenschaft)]}
 \phone{0941/133742666} % Optional
 \studSubject{Medieninformatik}
 \firstReviewer{Prof. Dr. Maike Musterprof}
@@ -19,71 +21,98 @@
 \studMail{[Emailadresse (z.B.: max.mustermann@stud.uni-regensburg.de)]}
 \dateHandedIn{[Abgabetermin der Arbeit]}
 \keywords{Enter;key;words;here}
+
 \writemeta
 
-\begin{document}
+\bibliographystyle{apacite}
 
-\maketitle
+% Stichwortverzeichnis erstellen
+\makeindex[columns=2, intoc, title=Stichwortverzeichnis, options=-s indexstyle]
+
+\begin{document}
 
 % Die Nummerierung beginnt mit der Titelseite (= Seite 1), soll aber erst ab der ersten Inhaltsseite (Einleitung) angezeigt werden.
 \pagestyle{empty}
 
-\defaultStretch % Zeilenabstand auf 1.5
+% Deckblatt des Templates und Hinweise
+% diese Zeile für die Verwendung des Templates entfernen!
+\input{hinweise}
+
+% Das Deckblatt erstellen
+\maketitle
+
 \newpage
+
+\onehalfspacing
 
 \tableofcontents % Optional
 \newpage
 \listoffigures % Optional
 \newpage
+\listoftables % Optional
+\newpage
 \lstlistoflistings % Optional
 \newpage
 
-\summary
-Bachelor- und Masterarbeiten beginnen mit einer Zusammenfassung in einer deutschen und englischen Version. Die Zusammenfassung gibt einen Überblick über Thema und Resultate der Arbeit. Inhaltlich werden die Zielsetzung, die Methodik, die einzelnen Arbeitsschritte bzw. Gliederungspunkte und die Ergebnisse der Arbeit widergegeben.\\
-Schlecht: „Schon immer haben Menschen Zusammenfassungen geschrieben [Platitüde, keine Zusammenfassung]. In dieser Arbeit wurde in mehreren Stu-dien untersucht, wie Zusammenfassungen wirken. [Was genau wurde untersucht? Was waren die Ergebnisse?]“\\
-Besser: „In dieser Arbeit wurde untersucht, inwiefern das Lesen von Zusammenfassungen das Lesen des kompletten Dokuments ersetzen kann. Dazu wur-den zwei Studien mit jeweils 17 Teilnehmern durchgeführt. In der ersten wurde [...]. Diese Ergebnisse zeigen, dass Bedienungsanleitungen und Bilderbücher weniger gut über Zusammenfassungen erschlossen werden können, als Roma-ne oder Sachbücher.“
+\doublespacing % doppelter Zeilenabstand sieht mehr nach 1.5 fachem aus
 
-\abstract
-A summary in English. It should be more or less similar to the German Zusammenfassung. Avoid too verbatim translations („In this work it was examined how the reading of ...“)
+\input{abstract}
 
 \newpage
-\pagestyle{fancy}
+\pagestyle{fancy} % Seitennummern und Kapitelbezeichnungen anzeigen
 
-\section{Über dieses Dokument}
-Dieses Dokument soll Ihnen den Einstieg beim Verfassen einer Studienarbeit erleichtern. Die Vorgaben sind als Empfehlungen zu verstehen, können aber bei Bedarf in Absprache mit den Dozenten angepasst und erweitert werden. Hier steht ein Beispielabschnitt. Die Schriftart ist Palatino Linotype, die Schriftgröße 11pt. Ein Verweis auf eine Abbildung (vgl. \nameref{img:norman2010}) wird in diesem Satz verdeutlicht. Alternativ eignen sich auch Serifenschriftarten wie Garamond, Times New Roman oder Frutiger Serif Pro. Querverweise (vgl. \nameref{section:2}) werden in diesem Satz  gezeigt. Der erste Absatz jedes Abschnitts und Absätze nach Abbildungen werden nicht eingerückt (Formatvorlage ist Standard). Ein weiterer Absatz wird durch Drücken der Return-Taste erzeugt und automatisch eingerückt. Absätze werden also nicht durch Leerzeilen, sondern durch Einrücken des Folgeabsatzes getrennt. Die Folgeabsätze erhalten automatisch die Formatvorlage Folgeabsatz.
-In dieser Vorlage können auch Codeschnipsel eingesetzt und referenziert werden (vgl. Algorithmus: \nameref{helloworld}).
+% hier beginnt der eigentliche Inhalt der Arbeit
 
-In der Kopfzeile erscheint immer der Text der aktuellen Überschrift, die mit der Formatvorlage „Überschrift 1“ formatiert wird. Somit wird dem Leser die Orientierung in der Arbeit erleichtert.\\
+\input{aufgabenstellung}
+\newpage
+\input{einleitung}
+\newpage
+\input{ziele}
+\newpage
+\input{stand_der_technik}
+\newpage
+\input{gestaltungsrichtlinien}
+\newpage
+\input{empfehlungen}
+\newpage
+\input{zusammenfassung}
 
-\begin{figure}[h!]
-    \center{
-	    \img{demo.jpg}{300pt}
-	}
-	\caption{Blümchen \citep{Norman:2002}}
-	\label{img:norman2010}
-\end{figure}
+% Kapitelbezeichnung in der rechten oberen Ecke entfernen
+\newpage
+\pagestyle{plain}
 
-Anschließend noch zwei Unterüberschriften und ein Codebeispiel.
-
-\subsection{Abschnitt 2}\label{section:2}
-Ein Beispiel für ein Codeschnipsel in Python.\\
-
-\begin{lstlisting}[captionpos=b, belowcaptionskip=4pt, caption=Hello World (Python), label=helloworld, language=Python]
-print("Hello World")
-\end{lstlisting}
-
-Ein Beispiel für ein Codeschnipsel in Java.\\
-
-\begin{lstlisting}[captionpos=b, belowcaptionskip=4pt, caption=Hello World (Java), language=Java]
-public class Main {
-	public static void main(String[] args){
-		System.out.println("Hello World");
-	}
+% Literaturverzeichnis anzeigen
+\addcontentsline{toc}{section}{Literaturverzeichnis}
+{
+    \onehalfspacing % kleinerer Zeilenabstand um Platz zu sparen
+    \bibliography{literature}
 }
-\end{lstlisting}
 
+% Anhang
 \newpage
-\bibliographystyle{apacite}
-\bibliography{literature}
+\input{anhang}
+
+% Tipps zur Verwendung von LaTeX
+\newpage
+\input{latex}
+
+% Erklärung zur Urherberschaft (urheberschaft.tex) anhängen
+\newpage
+\input{urheberschaft}
+
+% Erklärung zur Lizenzierung der Arbeit (lizenzierung.tex) anhängen
+\newpage
+\input{lizenzierung}
+
+% Stichwortverzeichnis anzeigen. Weiß nicht, warum das nicht nach dem Inhaltsverzeichnis kommt.
+{
+    \onehalfspacing
+    \newpage
+    \printindex
+}
+
+% Inhalt des Datenträgers. Gehört meiner Meinung nach zum Anhang, aber was weiß ich schon. AS
+\newpage
+\input{datenträger}
 
 \end{document}

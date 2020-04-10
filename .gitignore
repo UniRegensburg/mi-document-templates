@@ -91,7 +91,6 @@ acs-*.bib
 *.idx
 *.ilg
 *.ind
-*.ist
 
 # minitoc
 *.maf
@@ -157,3 +156,9 @@ pythontex-files-*/
 
 # Latexian
 TSWLatexianTemp*
+
+# VIM swap file
+*.swp
+
+notes.md
+build_overleaf

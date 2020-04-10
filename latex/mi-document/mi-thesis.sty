@@ -1,6 +1,7 @@
 % The MIT License (MIT)
 %
 % Copyright (c) 2016 Philipp Pascal Jean-Jacques
+% Copyright (c) 2020 Andreas Schmid
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +21,36 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\ProvidesClass{mi-graduation}[2016/07/15 v1.0 mi-graduation]
-\LoadClass[12pt,a4paper,oneside,ngerman]{mi-document}
+\ProvidesPackage{mi-thesis}[2020/03/19 v1.1 MI-Template für Abschlussarbeiten]
 
-\usepackage{mi-graduation}
+\renewcommand{\maketitle}{
+\setstretch{1.0}
+
+\vspace*{-30pt}
+\hfill\includegraphics[width=0.5\textwidth]{{images/logo_uni}}
+\vspace*{80pt}
+
+\begin{center}
+\begin{LARGE}
+\setstretch{1.5}
+\textbf{\getTitle} \\
+\end{LARGE}
+\vspace*{20pt}
+\getWorkType{} im Fach \getStudSubject{} am \getInstitute
+\end{center}
+
+\setstretch{1.0}
+
+\vfill
+
+\noindent Vorgelegt von: \getAuthor\\
+Adresse: \getAddress\\
+E-Mail (Universität): \getMail\\
+E-Mail (privat): \getStudMail\\
+Matrikelnummer: \getStudID\\
+Erstgutachter: \getFirstReviewer\\
+Zweitgutachter: \getSecondReviewer\\
+Betreuer: \getAdvisor\\
+Laufendes Semester: \getStudSemester\\
+Abgegeben am: \getDateHandedIn
+}

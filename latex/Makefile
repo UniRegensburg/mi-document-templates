@@ -1,19 +1,13 @@
-TEXMF=$(shell kpsewhich -var-value=TEXMFHOME)
+BASE=document
+export TEXINPUTS := .:./mi-document:
 
-all: install
+all: ${BASE}.pdf
 
-uninstall:
-	rm -rf ~/texmf/text/latex/mi-document
+${BASE}.pdf:
+	xelatex ${BASE}.tex
+	bibtex ${BASE}
+	xelatex ${BASE}.tex
+	xelatex ${BASE}.tex
 
-copy_files:
-	cp mi-document/*.sty $(TEXMF)/tex/latex/mi-document
-	cp mi-document/*.cls $(TEXMF)/tex/latex/mi-document
-
-create_directory:
-	if [ ! -d "$(TEXMF)" ]; then mkdir $(TEXMF); fi
-	if [ ! -d "$(TEXMF)/tex" ]; then mkdir $(TEXMF)/tex; fi
-	if [ ! -d "$(TEXMF)/tex/latex" ]; then mkdir $(TEXMF)/tex/latex; fi
-	if [ ! -d "$(TEXMF)/tex/latex/mi-document" ]; then mkdir $(TEXMF)/tex/latex/mi-document; fi
-
-install: create_directory copy_files
-update:	uninstall create_directory copy_files
+clean:
+	-rm ${BASE}.aux ${BASE}.bbl ${BASE}.blg ${BASE}.idx ${BASE}.ilg ${BASE}.ind ${BASE}.lof ${BASE}.log ${BASE}.lol ${BASE}.lot ${BASE}.out ${BASE}.pdf ${BASE}.toc
