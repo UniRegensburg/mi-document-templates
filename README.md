@@ -4,5 +4,4 @@ Dokumentvorlagen für Seminar- und Abschlussarbeiten am Lehrstuhl für Medieninf
 * word/ - Formatvorlage für Microsoft Word
 * libreoffice/ - Formatvorlage für LibreOffice
 * latex/ - Formatvorlage für LaTeX
-* overleaf/ - Formatvorlage für LaTeX mit Overleaf
 

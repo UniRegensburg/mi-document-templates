@@ -70,6 +70,8 @@ sudo apt install texlive-bibtex-extra
 
 - Kompilieren Sie ```document.tex```.
 
+- *Alternative:* Das Template kann außerdem in der [Overleaf-Gallery](https://www.overleaf.com/latex/templates/mi-ur-template-fur-abschlussarbeiten/myvmvphngjjn) gefunden und dort direkt als Vorlage benutzt werden
+
 
 #### MacTex + TexShop (getestet unter 10.15.3, Catalina)
 
