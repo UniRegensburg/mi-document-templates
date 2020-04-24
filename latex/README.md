@@ -62,13 +62,17 @@ sudo apt install texlive-bibtex-extra
 
 #### Overleaf
 
-- Zippen Sie den gesamten Inhalt des *latex*-Ordners.
+- Variante 1: Verwenden Sie die Overleaf-Vorlage (https://www.overleaf.com/latex/templates/mi-ur-template-fur-abschlussarbeiten/myvmvphngjjn)
 
-- Erstellen Sie in Overleaf ein neues Projekt ("New Project -> Upload Project") und laden Sie das gezippte Template hoch.
+- Variante 2:
 
-- Stellen Sie den Compiler auf XeLaTeX um ("Menu -> Compiler").
+  - Zippen Sie den gesamten Inhalt des *latex*-Ordners.
 
-- Kompilieren Sie ```document.tex```.
+  - Erstellen Sie in Overleaf ein neues Projekt ("New Project -> Upload Project") und laden Sie das gezippte Template hoch.
+
+  - Stellen Sie den Compiler auf XeLaTeX um ("Menu -> Compiler").
+
+  - Kompilieren Sie ```document.tex```.
 
 
 #### MacTex + TexShop (getestet unter 10.15.3, Catalina)
