@@ -44,7 +44,7 @@
 \usepackage[a4paper,left=3.5cm,right=3.5cm,top=2.5cm,bottom=2.5cm,includehead]{geometry}
 %\usepackage{setspace}
 \usepackage{glossaries}
-\usepackage{imakeidx} % Stichwortverzeichnis
+
 
 \usepackage{setspace}
 
@@ -92,7 +92,7 @@
 \newcommand{\address}[2]{\renewcommand{\getAddress}{#1}}
 \newcommand{\phone}[1]{\renewcommand{\getPhone}{#1}}
 \newcommand{\dateHandedIn}[1]{\renewcommand{\getDateHandedIn}{#1}}
-\newcommand{\writemeta}{
+\AtBeginDocument{
 	\hypersetup{pdfinfo={
 			Title={\getTitle},
 			Author={\getAuthor},
