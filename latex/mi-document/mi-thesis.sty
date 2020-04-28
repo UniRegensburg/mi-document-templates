@@ -23,34 +23,42 @@
 
 \ProvidesPackage{mi-thesis}[2020/03/19 v1.1 MI-Template für Abschlussarbeiten]
 
+\RequirePackage{ragged2e}
+
 \renewcommand{\maketitle}{
+\begin{titlepage}
 \setstretch{1.0}
 
 \vspace*{-30pt}
-\hfill\includegraphics[width=0.5\textwidth]{{images/logo_uni}}
-\vspace*{80pt}
+\hfill\includegraphics[width=0.5\textwidth]{images/logo_uni}
+\vspace{80pt}
 
-\begin{center}
-\begin{LARGE}
+\centering
+\LARGE
 \setstretch{1.5}
-\textbf{\getTitle} \\
-\end{LARGE}
-\vspace*{20pt}
-\getWorkType{} im Fach \getStudSubject{} am \getInstitute
-\end{center}
+\textbf{\getTitle}
+
+\vspace{20pt}
+\normalsize
+\getWorkType{} im Fach \getStudSubject{}\\
+am \getInstitute
 
 \setstretch{1.0}
 
 \vfill
 
-\noindent Vorgelegt von: \getAuthor\\
-Adresse: \getAddress\\
-E-Mail (Universität): \getMail\\
-E-Mail (privat): \getStudMail\\
-Matrikelnummer: \getStudID\\
-Erstgutachter: \getFirstReviewer\\
-Zweitgutachter: \getSecondReviewer\\
-Betreuer: \getAdvisor\\
-Laufendes Semester: \getStudSemester\\
-Abgegeben am: \getDateHandedIn
+
+\begin{tabularx}{\linewidth}{@{}l<{:}>{\RaggedRight\arraybackslash}X@{}}
+Vorgelegt von&\getAuthor\\
+Adresse&\getAddress\\
+E-Mail (Universität)&\getMail\\
+E-Mail (privat)&\getStudMail\\
+Matrikelnummer&\getStudID\\
+Erstgutachter&\getFirstReviewer\\
+Zweitgutachter&\getSecondReviewer\\
+Betreuer&\getAdvisor\\
+Laufendes Semester&\getStudSemester\\
+Abgegeben am&\getDateHandedIn
+\end{tabularx}
+\end{titlepage}
 }
