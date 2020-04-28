@@ -50,7 +50,6 @@
 \usepackage{color}
 \usepackage{apacite}
 \usepackage{setspace}
-\usepackage{fancyhdr}
 \usepackage{nameref}
 \usepackage{pifont}
 \usepackage{natbib}
@@ -63,6 +62,11 @@
 \usepackage{imakeidx} % Stichwortverzeichnis
 
 \usepackage{babel}
+
+% page style
+\RequirePackage[automark]{scrlayer-scrpage}
+\chead{}
+\ohead{\leftmark}
 
 \usepackage{mi-colors}
 \usepackage{mi-language-processing}
