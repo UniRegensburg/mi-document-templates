@@ -67,7 +67,6 @@
 		Keywords={\getKeywords}
 	}}
 }
-\newcommand{\summary}{\noindent\begin{large}\textbf{Zusammenfassung}\end{large}\\\vspace*{-10pt}\\}
 \newcommand{\bachelor}{\renewcommand{\getWorkType}{Bachelorarbeit}}
 \newcommand{\master}{\renewcommand{\getWorkType}{Masterarbeit}}
 \newcommand{\studSubject}[1]{\renewcommand{\getStudSubject}{#1}}
@@ -95,8 +94,17 @@
     \text{\rlap{\ding{55}}}\ding{114}
 }
 
-\renewcommand{\abstract}{\vspace*{20pt}\noindent\begin{large}\textbf{Abstract}\end{large}\\\vspace*{-10pt}\\}
 
+%abstract environment with language option
+\RenewDocumentEnvironment{abstract}{o}{
+	\IfNoValueF{#1}{\selectlanguage{#1}}%
+	\if@abstrt
+			\Iftocfeature{toc}{leveldown}%
+			{\subsection*}%
+			{\section*}%
+		{\abstractname}%
+	\fi
+}{}
 
 
 %% lower line spacing for lists
