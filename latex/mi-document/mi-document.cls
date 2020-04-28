@@ -22,7 +22,7 @@
 % SOFTWARE.
 
 \ProvidesClass{mi-document}[2020/03/19 v1.1 mi-document]
-\LoadClass[11pt,a4paper,oneside,abstract=true,bibliography=totoc]{scrartcl}
+\LoadClass[fontsize=11pt,a4paper,oneside,abstract=true,bibliography=totoc]{scrreprt}
 
 %TODO font setup
 
@@ -140,6 +140,7 @@
 	{\abstractname}%
 	\fi
 }{}
+
 
 
 %% lower line spacing for lists
