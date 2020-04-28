@@ -22,7 +22,7 @@
 % SOFTWARE.
 
 \ProvidesClass{mi-document}[2020/03/19 v1.1 mi-document]
-\LoadClass[11pt,a4paper,oneside,ngerman]{scrartcl}
+\LoadClass[11pt,a4paper,oneside]{scrartcl}
 
 
 \usepackage{DejaVuSans}
@@ -31,11 +31,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
 \usepackage{unicode-math}
-\usepackage{ngerman}
 \usepackage{xltxtra}
 \usepackage{xunicode}
-\usepackage{polyglossia}
-\setmainlanguage[babelshorthands=true]{german}
 \usepackage{graphicx}
 \usepackage[bookmarks=true,
 			bookmarksnumbered=false,
@@ -64,6 +61,8 @@
 \usepackage{bibentry}
 \usepackage{enumitem}
 \usepackage{imakeidx} % Stichwortverzeichnis
+
+\usepackage{babel}
 
 \usepackage{mi-colors}
 \usepackage{mi-language-processing}
