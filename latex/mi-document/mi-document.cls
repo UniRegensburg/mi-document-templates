@@ -25,12 +25,30 @@
 \LoadClass[11pt,a4paper,oneside,abstract=true,bibliography=totoc]{scrartcl}
 
 %TODO font setup
-\usepackage{DejaVuSans}
-\usepackage{tgpagella}
-\usepackage[scaled]{helvet}
-\usepackage[T1]{fontenc}
-\usepackage{fontspec}
-\usepackage{unicode-math}
+
+\RequirePackage{iftex}
+\ifPDFTeX
+	\RequirePackage{tgpagella}
+	\RequirePackage{tgheros}
+	\RequirePackage{tgcursor}
+	\RequirePackage[T1]{fontenc}
+\else
+	\usepackage{fontspec}
+	\setmainfont{TeX Gyre Pagella}
+	\setsansfont{TeX Gyre Heros}
+	\setmonofont{TeX Gyre Cursor}
+	\usepackage{unicode-math}
+\fi
+
+	\RequirePackage{pifont}
+\newcommand{\checkboxEmpty}{
+	\ding{114}
+}
+\newcommand{\checkboxChecked}{
+	\leavevmode\rlap{\ding{55}}\ding{114}
+}
+
+
 
 \usepackage{graphicx}
 \usepackage{color}
