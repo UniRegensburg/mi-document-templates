@@ -1,5 +1,7 @@
 \documentclass{mi-thesis}
 
+\usepackage[english, main=ngerman]{babel}
+
 \bachelor % im Falle einer Masterarbeit \master
 
 % Variablen, die für das Deckblatt und Metadaten verwendet werden
@@ -25,6 +27,7 @@
 \bibliographystyle{apacite}
 
 % Stichwortverzeichnis erstellen
+\usepackage{imakeidx}
 \makeindex[columns=2, intoc, title=Stichwortverzeichnis, options=-s indexstyle]
 
 \usepackage{mi-compatibility}
