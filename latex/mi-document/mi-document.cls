@@ -34,14 +34,6 @@
 \usepackage{xltxtra}
 \usepackage{xunicode}
 \usepackage{graphicx}
-\usepackage[bookmarks=true,
-			bookmarksnumbered=false,
-			bookmarksopen=false,
-			colorlinks=true,
-			linkcolor=black,
-			citecolor=black,
-			urlcolor=black
-			]{hyperref}
 \usepackage{amsmath}
 \usepackage{cancel}
 \usepackage{mathcomp}
@@ -61,12 +53,14 @@
 \usepackage{enumitem}
 \usepackage{imakeidx} % Stichwortverzeichnis
 
-\usepackage{babel}
+\RequirePackage{babel}
 
 % page style
 \RequirePackage[automark]{scrlayer-scrpage}
 \chead{}
 \ohead{\leftmark}
+
+\RequirePackage[hidelinks]{hyperref}
 
 \usepackage{mi-colors}
 \usepackage{mi-language-processing}
