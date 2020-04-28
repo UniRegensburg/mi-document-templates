@@ -45,75 +45,58 @@
 % Das Deckblatt erstellen
 \maketitle
 
-\newpage
+\tableofcontents % Optional
+\listoffigures % Optional
+\listoftables % Optional
+\lstlistoflistings % Optional
 
+
+\clearpage
 \onehalfspacing
 
-\tableofcontents % Optional
-\newpage
-\listoffigures % Optional
-\newpage
-\listoftables % Optional
-\newpage
-\lstlistoflistings % Optional
-\newpage
-
-\doublespacing % doppelter Zeilenabstand sieht mehr nach 1.5 fachem aus
 
 \input{abstract}
 
-\newpage
-\pagestyle{fancy} % Seitennummern und Kapitelbezeichnungen anzeigen
+\clearpage
+\pagestyle{headings} % Seitennummern und Kapitelbezeichnungen anzeigen
 
 % hier beginnt der eigentliche Inhalt der Arbeit
 
-\input{aufgabenstellung}
-\newpage
-\input{einleitung}
-\newpage
-\input{ziele}
-\newpage
-\input{stand_der_technik}
-\newpage
-\input{gestaltungsrichtlinien}
-\newpage
-\input{empfehlungen}
-\newpage
-\input{zusammenfassung}
+\include{aufgabenstellung}
+\include{einleitung}
+\include{ziele}
+\include{stand_der_technik}
+\include{gestaltungsrichtlinien}
+\include{empfehlungen}
+\include{zusammenfassung}
 
 % Kapitelbezeichnung in der rechten oberen Ecke entfernen
-\newpage
+\clearpage
 \pagestyle{plain}
 
 % Literaturverzeichnis anzeigen
-\addcontentsline{toc}{section}{Literaturverzeichnis}
-{
-    \onehalfspacing % kleinerer Zeilenabstand um Platz zu sparen
-    \bibliography{literature}
-}
+
+\onehalfspacing % kleinerer Zeilenabstand um Platz zu sparen
+\bibliography{literature}
+
 
 % Anhang
-\newpage
-\input{anhang}
+\include{anhang}
 
 % Tipps zur Verwendung von LaTeX
-\newpage
-\input{latex}
+\include{latex}
 
+\begin{singlespace}
+\KOMAoptions{parskip=full}
 % Erklärung zur Urherberschaft (urheberschaft.tex) anhängen
-\newpage
-\input{urheberschaft}
+\include{urheberschaft}
 
 % Erklärung zur Lizenzierung der Arbeit (lizenzierung.tex) anhängen
-\newpage
-\input{lizenzierung}
+\include{lizenzierung}
 
 % Stichwortverzeichnis anzeigen. Weiß nicht, warum das nicht nach dem Inhaltsverzeichnis kommt.
-{
-    \onehalfspacing
-    \newpage
-    \printindex
-}
+\printindex
+\end{singlespace}
 
 % Inhalt des Datenträgers. Gehört meiner Meinung nach zum Anhang, aber was weiß ich schon. AS
 \newpage
