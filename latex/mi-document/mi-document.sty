@@ -121,22 +121,44 @@
     \end{figure}
 }
 
-
+%TODO only if compat
 % commands to create unnumbered sections that also appear in the table of contents
-\newcommand{\usection}[1]{
-    \addcontentsline{toc}{section}{#1}
-    \section*{#1}
+\let\usection\addsec
+\newcommand\addsubsec{\SecDef\@addsubsec\@saddsubsec}
+\newcommand*{\@addsubsec}{}
+\def\@addsubsec[#1]#2{%
+	\edef\reserved@a{%
+		\unexpanded{%
+			\subsection[{#1}]{#2}%
+			\c@secnumdepth=
+		}\the\c@secnumdepth\relax
+	}%
+	\c@secnumdepth=\numexpr \subsectionnumdepth-1\relax
+	\reserved@a
 }
+\newcommand*{\@saddsubsec}[1]{%
+	\subsection*{#1}\addsubsecmark{}%
+}
+\let\usubsection\addsubsec
 
-\newcommand{\usubsection}[1]{
-    \addcontentsline{toc}{subsection}{#1}
-    \subsection*{#1}
+\newcommand\addsubsubsec{\SecDef\@addsubsubsec\@saddsubsubsec}
+\newcommand*{\@addsubsubsec}{}
+\def\@addsubsubsec[#1]#2{%
+	\edef\reserved@a{%
+		\unexpanded{%
+			\subsubsection[{#1}]{#2}%
+			\c@secnumdepth=
+		}\the\c@secnumdepth\relax
+	}%
+	\c@secnumdepth=\numexpr \subsubsectionnumdepth-1\relax
+	\reserved@a
 }
+\newcommand*{\@saddsubsubsec}[1]{%
+	\subsubsection*{#1}\addsubsubsecmark{}%
+}
+\let\usubsubsection\addsubsubsec
 
-\newcommand{\usubsubsection}[1]{
-    \addcontentsline{toc}{subsubsection}{#1}
-    \subsubsection*{#1}
-}
+
 
 \lstloadlanguages{Python}
 \lstset{
