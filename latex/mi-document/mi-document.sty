@@ -76,14 +76,11 @@
 \newcommand{\institute}[1]{\renewcommand{\getInstitute}{#1}}
 \newcommand{\defaultStretch}{\setstretch{1.5}}
 
-\newcommand{\signature}{
-    \vspace{1.5cm}
-    \begin{tabular}{lp{4cm}l}
-     \hspace{4cm}  && \hspace{4cm}
-     \\\cline{1-1}    \cline{3-3}
-     Ort, Datum    && Unterschrift
-    \end{tabular}
-}
+\newcommand{\signature}{\@ifstar\mi@signaturestar\mi@signature}
+\newcommand{\mi@signature}{\par\vspace{1.5cm}\noindent Regensburg, \getDateHandedIn\hfill\SignatureBox{Unterschrift}\\\strut}
+\newcommand{\mi@signaturestar}{\par\vspace{1.5cm}\noindent\SignatureBox{Ort, Datum}\hfill\SignatureBox{Unterschrift}\\\strut}
+
+\newcommand*{\SignatureBox}[2][5cm]{\parbox[t]{#1}{\centering\rule{\linewidth}{.3pt}\\\makebox[0pt][c]{#2}}}
 
 %TODO: maybe only for pdflatex
 \RequirePackage{pifont}
