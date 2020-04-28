@@ -33,18 +33,14 @@
 \usepackage{unicode-math}
 
 \usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{mathcomp}
-\usepackage{listings}
 \usepackage{color}
-\usepackage{apacite}
 
+
+\usepackage{apacite}
 \usepackage{natbib}
 \usepackage{bibentry}
-\usepackage[a4paper,left=3.5cm,right=3.5cm,top=2.5cm,bottom=2.5cm,includehead]{geometry}
-%\usepackage{setspace}
-\usepackage{glossaries}
 
+\usepackage[a4paper,left=3.5cm,right=3.5cm,top=2.5cm,bottom=2.5cm,includehead]{geometry}
 
 \usepackage{setspace}
 
@@ -114,17 +110,9 @@
 \newcommand{\mi@signaturestar}{\par\vspace{1.5cm}\noindent\SignatureBox{Ort, Datum}\hfill\SignatureBox{Unterschrift}\\\strut}
 \newcommand*{\SignatureBox}[2][5cm]{\parbox[t]{#1}{\centering\rule{\linewidth}{.3pt}\\\makebox[0pt][c]{#2}}}
 
-%TODO: maybe only for pdflatex
-\RequirePackage{pifont}
-\newcommand{\checkboxEmpty}{
-	\ding{114}
-}
-\newcommand{\checkboxChecked}{
-	\text{\rlap{\ding{55}}}\ding{114}
-}
-
 
 %abstract environment with language option
+\RequirePackage{xparse}
 \RenewDocumentEnvironment{abstract}{o}{
 	\IfNoValueF{#1}{\selectlanguage{#1}}%
 	\if@abstrt
@@ -161,6 +149,7 @@
 
 
 \usepackage{mi-colors}
+\usepackage{listings}
 \usepackage{mi-language-processing}
 \usepackage{mi-language-javascript}
 \usepackage{mi-language-python}
@@ -184,6 +173,7 @@
 	showstringspaces=false,
 	upquote=true,
 }
+
 
 
 \endinput
