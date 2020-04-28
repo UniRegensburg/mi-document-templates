@@ -105,57 +105,25 @@
     \includegraphics[width=#2]{{images/#1}}
 }
 
-% lower line spacing for lists
-\setlist[enumerate]{itemsep=0mm}
-\setlist[itemize]{itemsep=0mm}
-\setlist[description]{itemsep=0mm}
+%% lower line spacing for lists
+\let\orig@listi\@listi
+\def\@listi{%
+	\orig@listi
+	\itemsep\z@
+}
+\let\@listI\@listi
 
-% create a image figure
-% param 1: image file name (without extension)
-% param 2: figure description
-\newcommand{\image}[2]{
-    \begin{figure}[ht]
-        \centering
-        \includegraphics[width=0.5\textwidth]{{images/#1}}
-        \caption{#2}
-        \label{fig:#1}
-    \end{figure}
+\let\orig@listii\@listii
+\def\@listii{%
+	\orig@listii
+	\itemsep\z@
 }
 
-
-\lstloadlanguages{Python}
-\lstset{
-	language=Python,   % default language
-	xleftmargin=0.6cm,
-	frameround=ffff,
-	rulecolor = \color[rgb]{0.6, 0.6, 0.6},
-	framexleftmargin= 1.5mm,
-	framexrightmargin= -5.5mm,
-	numbers=left,
-	numberstyle=\ttfamily,
-    basicstyle=\linespread{1}\ttfamily,
-	backgroundcolor=\color[rgb]{1, 1, 1},
-	breaklines=true,
-	tabsize=2,
-	frame=bt,
-	showstringspaces=false,
-	showstringspaces=false,
-	upquote=true,
+\let\orig@listiii\@listiii
+\def\@listiii{%
+	\orig@listiii
+	\itemsep\z@
 }
-
-\def\labelitemi{--}
-
-\renewcommand\lstlistingname{Codebeispiel} % listing description
-\renewcommand\lstlistlistingname{Codebeispiele} % heading for list of listings
-
-
-
-% configure fonts
-\renewcommand{\familydefault}{\rmdefault}
-\setromanfont{TeX Gyre Pagella} % altenativ: Palatino Linotype, Book Antiqua
-\setmonofont[Scale=0.8,BoldFont={*}]{DejaVuSansMono} % Beliebiger monospaced font. Fonts mit Ligaturen sind nicht speziell erlaubt oder verboten (z.B. Fira Code). Vorgeschlagene Schriftarten: DejaVu Sans Mono, Source Code Pro, Courier New, Consolas (Windows), Droid Sans Mono (Google Fonts).
-\setsansfont{Nimbus Sans L} % altenativ: Palatino Linotype, Book Antiqua
-\setmainfont{TeX Gyre Pagella} % altenativ: Palatino Linotype, Book Antiqua
 
 % fonts for section headings
 \setkomafont{disposition}{\bfseries}

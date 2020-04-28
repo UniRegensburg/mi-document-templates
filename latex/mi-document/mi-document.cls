@@ -50,7 +50,6 @@
 \usepackage{glossaries}
 \usepackage{multirow}
 \usepackage{bibentry}
-\usepackage{enumitem}
 \usepackage{imakeidx} % Stichwortverzeichnis
 
 \RequirePackage{babel}
