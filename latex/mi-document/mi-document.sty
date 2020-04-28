@@ -86,10 +86,11 @@
     \end{tabular}
 }
 
+%TODO: maybe only for pdflatex
+\RequirePackage{pifont}
 \newcommand{\checkboxEmpty}{
     \ding{114}
 }
-
 \newcommand{\checkboxChecked}{
     \text{\rlap{\ding{55}}}\ding{114}
 }
@@ -120,44 +121,6 @@
         \label{fig:#1}
     \end{figure}
 }
-
-%TODO only if compat
-% commands to create unnumbered sections that also appear in the table of contents
-\let\usection\addsec
-\newcommand\addsubsec{\SecDef\@addsubsec\@saddsubsec}
-\newcommand*{\@addsubsec}{}
-\def\@addsubsec[#1]#2{%
-	\edef\reserved@a{%
-		\unexpanded{%
-			\subsection[{#1}]{#2}%
-			\c@secnumdepth=
-		}\the\c@secnumdepth\relax
-	}%
-	\c@secnumdepth=\numexpr \subsectionnumdepth-1\relax
-	\reserved@a
-}
-\newcommand*{\@saddsubsec}[1]{%
-	\subsection*{#1}\addsubsecmark{}%
-}
-\let\usubsection\addsubsec
-
-\newcommand\addsubsubsec{\SecDef\@addsubsubsec\@saddsubsubsec}
-\newcommand*{\@addsubsubsec}{}
-\def\@addsubsubsec[#1]#2{%
-	\edef\reserved@a{%
-		\unexpanded{%
-			\subsubsection[{#1}]{#2}%
-			\c@secnumdepth=
-		}\the\c@secnumdepth\relax
-	}%
-	\c@secnumdepth=\numexpr \subsubsectionnumdepth-1\relax
-	\reserved@a
-}
-\newcommand*{\@saddsubsubsec}[1]{%
-	\subsubsection*{#1}\addsubsubsecmark{}%
-}
-\let\usubsubsection\addsubsubsec
-
 
 
 \lstloadlanguages{Python}
