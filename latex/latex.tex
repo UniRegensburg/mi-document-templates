@@ -22,23 +22,21 @@ Diese Abschnitte werden automatisch mit einer fortlaufenden Nummerierung versehe
 Die Syntax der Befehle lautet wie folgt:
 
 \begin{verbatim}
-\section{Kapitelname}                 % z.B. 4 Gestaltungsrichtlinien
-\subsection{Unterkapitelname}         % z.B. 4.3 Formatierung
-\subsubsection{Unterunterkapitelname} % z.B. 4.3.3 Abbildungen
+\chapter{Kapitelname}              % z.B. 4 Gestaltungsrichtlinien
+\section{Unterkapitelname}         % z.B. 4.3 Formatierung
+\subsection{Unterunterkapitelname} % z.B. 4.3.3 Abbildungen
 \end{verbatim}
 
 Es wir empfohlen, Abschnitte außerdem mit Labels zu versehen, damit sie im späteren Verlauf der arbeit einfacher referenziert werden können:
 
 \begin{verbatim}
-\section{Kapitelname}\label{sec:Kapitelname} % Label wird gesetzt
+\chapter{Kapitelname}\label{sec:Kapitelname} % Label wird gesetzt
 \ref{sec:Kapitelname}                        % Referenz auf das Label
 \end{verbatim}
 
 Das die Referenz wird im Fließtext durch die \textbf{Kapitelnummer} ersetzt, sodass eine Syntax wie \verb|(siehe Kapitel \ref{Kapitelname})| empfohlen wird.
 
-Ist ein Abschnitt \textbf{ohne} Nummerierung gewünscht, so können die Befehle \verb|\usection|, \verb|\usubsection| und \verb|usubsubsection| benutzt werden.
-Die damit erstellten Abschnitte werden trotzdem im Inhaltsverzeichnis aufgeführt.
-Syntaktisch entsprechen diese Befehle \verb|section| etc.
+Ist ein Abschnitt \textbf{ohne} Nummerierung gewünscht, so können die Befehle \verb|\addchap| und \verb|\addsec| genutzt werden. Diese erzeugen nicht-nummerierte Überschriften inklusive Eintrag ins Inhaltsverzeichnis.
 
 \subsection{Listen}
 
