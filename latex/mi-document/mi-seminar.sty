@@ -23,22 +23,21 @@
 \ProvidesPackage{mi-seminar}[2016/07/15 v1.0 MI-Template für Seminararbeiten]
 
 \renewcommand{\maketitle}{
-\setstretch{1.0}
+\begin{titlepage}
+\raggedright
 
 \vspace*{-30pt}
 \hfill\includegraphics[width=0.5\textwidth]{{images/logo_uni}}
-\vspace*{20pt}
+\vspace{20pt}
 
-\noindent
-\textbf{Philosophische Fakult"at III \\
+\bfseries
+Philosophische Fakultät III \\
 Sprach- , Literatur- und Kulturwissenschaften \\
-Institut f"ur Information und Medien, Sprache und Kultur (I:IMSK)\\
-Lehrstuhl f"ur Medieninformatik \\
+Institut für Information und Medien, Sprache und Kultur (I:IMSK)\\
+Lehrstuhl für Medieninformatik \\
 \rule{\textwidth}{0.4pt}
-\vspace*{0pt}
-\\
-}
-\noindent
+
+\mdseries
 \getCourse\\
 Modul: \getModule\\
 \getSemester\\
@@ -46,19 +45,20 @@ Leitung: \getDozent\\
 \vspace*{120pt}
 
 \begin{center}
-\begin{LARGE}
-\textbf{\getTitle} \\
-\end{LARGE}
+\LARGE\bfseries
+\getTitle
 \end{center}
 
 \vfill
 
 \noindent\getAuthor\\
 \getStudID\\
-\getStudSemester\\
-\\
+\getStudSemester
+
 \getAddress\\
 Tel.: \getPhone\\
+
 Email: \getMail\\
 Abgegeben am \getDateHandedIn
+\end{titlepage}
 }
