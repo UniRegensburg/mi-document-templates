@@ -45,7 +45,7 @@ Syntaktisch entsprechen diese Befehle \verb|section| etc.
 \LaTeX stellt drei verschiedene Arten von Listen bereit: Aufzählungen \textit{(itemize)}, nummerierte Aufzählungen \textit{(enumerate)} und Beschreibungen \textit{(description)}.
 Beispielhaft werden hier Quellcode und Resultat dargestellt:
 
-\textbf{\large{Aufzählung}}
+\minisec{Aufzählung}
 
 \begin{verbatim}
 \begin{itemize}
@@ -61,7 +61,7 @@ Beispielhaft werden hier Quellcode und Resultat dargestellt:
     \item{Das ist der dritte Punkt.}
 \end{itemize}
 
-\textbf{\large{Nummerierte Aufzählung}}
+\minisec{Nummerierte Aufzählung}
 
 \begin{verbatim}
 \begin{enumerate}
@@ -77,7 +77,7 @@ Beispielhaft werden hier Quellcode und Resultat dargestellt:
     \item{Das ist der dritte Punkt.}
 \end{enumerate}
 
-\textbf{\large{Beschreibung}}
+\minisec{Beschreibung}
 
 \begin{verbatim}
 \begin{description}
@@ -117,14 +117,14 @@ Unterpunkte können erstellt werden, indem innerhalb einer Liste eine neue Liste
 
 \usubsubsection{Abbildungen, Tabellen und Code}
 
-\textbf{\large{Abbildungen}}
+\minisec{Abbildungen}
 
 Um eine Abbildung einzufügen, werden normalerweise folgende Befehle verwendet:
 
 \begin{verbatim}
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{{images/dateiname}}
+    \includegraphics[width=0.5\textwidth]{images/dateiname}
     \caption{Bildbeschreibung}
     \label{fig:label}
 \end{figure}
@@ -142,7 +142,7 @@ Das Ergebnis beider Varianten sieht so aus:
 
 \image{blume}{Bildbeschreibung}
 
-\textbf{\large{Tabellen}}
+\minisec{Tabellen}
 
 Tabellen in \LaTeX zu erstellen mag anfangs etwas umständlich erscheinen, sie bieten jedoch sehr viel gestalterische Möglichkeiten.
 Sie bestehen im Grunde aus zwei verschachtelten Environments:
@@ -189,7 +189,7 @@ Dritte Zeile & dolor \\
 \label{table:label_der_tabelle}
 \end{table}}
 
-\textbf{\large{Code}}
+\minisec{Code}
 
 Um Code einzubinden, wird das \verb|lstlisting|-Environment verwendet.
 Über Parameter können Metadaten wie die Programmiersparche (wichtig für korrektes Syntax-Highlighting), die Beschreibung und das Label festgelegt werden.
@@ -239,7 +239,7 @@ Sollen nur einzelne Wörter monospaced angezeigt werden, kann auf \verb!\verb|te
 
 \usubsubsection{Zitate und Fußnoten}
 
-\textbf{\large{Zitate im Text}}
+\minisec{Zitate im Text}
 
 Zitate im Text und Einträge im Literaturverzeichnis werden aus Einträgen einer \textit{BibTeX}-Datei generiert.
 Diese kann entweder selbst zusammengestellt, oder aus einem Programm zu Literatuverwaltung (z.B. Zotero, Mendeley, Citavi) exportiert werden.
@@ -262,7 +262,7 @@ Um eine Quelle zu zitieren, können folgende Befehle verwendet werden:
 
 Einträge im Literaturverzeichnis werden automatisch erstellt, wenn eine Quelle zitiert wird.
 
-\textbf{\large{Blockzitate}}
+\minisec{Blockzitate}
 
 Blockzitate werden mit dem \verb|quote|-Environment umschlossen.
 Sie sollten mit einem Verweis auf die Literaturquelle beendet werden.
@@ -279,7 +279,7 @@ Sie sollten mit einem Verweis auf die Literaturquelle beendet werden.
 \cite[S. 4]{mustermann2013test}
 \end{quote}
 
-\textbf{\large{Fußnoten}}
+\minisec{Fußnoten}
 
 Fußnoten werden über den \verb|\footnote{Inhalt der Fußnote}|-Befehl erstellt und automatisch nummeriert. Beispiel:
 
