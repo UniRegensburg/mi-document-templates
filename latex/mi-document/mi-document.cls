@@ -61,7 +61,6 @@
 \usepackage{setspace}
 \usepackage{glossaries}
 \usepackage{multirow}
-\usepackage{tocloft}
 \usepackage{bibentry}
 \usepackage{enumitem}
 \usepackage{imakeidx} % Stichwortverzeichnis
