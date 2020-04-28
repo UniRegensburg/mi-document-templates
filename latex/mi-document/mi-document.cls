@@ -22,7 +22,7 @@
 % SOFTWARE.
 
 \ProvidesClass{mi-document}[2020/03/19 v1.1 mi-document]
-\LoadClass[fontsize=11pt,a4paper,oneside,abstract=true,bibliography=totoc]{scrreprt}
+\LoadClass[fontsize=11pt,a4paper,oneside,abstract=true,bibliography=totoc,headings=small]{scrreprt}
 
 %TODO font setup
 

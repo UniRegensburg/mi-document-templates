@@ -1,8 +1,8 @@
-\section{Tipps für \LaTeX}\label{latex}
+\chapter{Tipps für \LaTeX}\label{latex}
 
 Hier finden Sie gesammelte Hinweise, die sich speziell auf das \LaTeX-Template und dessen Verwendung beziehen. Der Aufbau des Templates wird dargelegt und wichtige Befehle werden anhand von Beispielen erklärt.
 
-\subsection{Struktur des Templates}
+\section{Struktur des Templates}
 
 \begin{description}
     \item[mi-document/]{Dieses Verzeichnis enthält die Style- und Class-Files, die das eigentliche Template darstellen. In diesen werden Pakete importiert, Formatierungen definiert und zusätzliche Funktionen bereitgestellt. Manche Entwicklungsumgebungen für \LaTeX, wie TeXmaker und TeXstudio, finden diese Dateien leider nur, wenn sie sich im gleichen Verzeichnis befinden wie \verb|document.tex|. In diesem Fall müssen alle \verb|.sty|- und \verb|.cls|-Dateien in dessen Verzeichnis verschoben werden.}
@@ -13,9 +13,9 @@ Hier finden Sie gesammelte Hinweise, die sich speziell auf das \LaTeX-Template u
     \item[images/]{Bilddateien in diesem Verzeichnis können als Abbildungen in ein \LaTeX-Dokument eingebunden werden.}
 \end{description}
 
-\subsection{Wichtige Befehle}
+\section{Wichtige Befehle}
 
-\subsubsection{Sections, Subsections, etc.}
+\subsection{Sections, Subsections, etc.}
 
 Die Abschnitte eines \LaTeX-Dokuments werden in \textit{sections}, \textit{subsections} und \textit{subsubsections} aufgeteilt.
 Diese Abschnitte werden automatisch mit einer fortlaufenden Nummerierung versehen und im Inhaltsverzeichnis aufgeführt.
@@ -40,7 +40,7 @@ Ist ein Abschnitt \textbf{ohne} Nummerierung gewünscht, so können die Befehle 
 Die damit erstellten Abschnitte werden trotzdem im Inhaltsverzeichnis aufgeführt.
 Syntaktisch entsprechen diese Befehle \verb|section| etc.
 
-\subsubsection{Listen}
+\subsection{Listen}
 
 \LaTeX stellt drei verschiedene Arten von Listen bereit: Aufzählungen \textit{(itemize)}, nummerierte Aufzählungen \textit{(enumerate)} und Beschreibungen \textit{(description)}.
 Beispielhaft werden hier Quellcode und Resultat dargestellt:
@@ -115,7 +115,7 @@ Beispielhaft werden hier Quellcode und Resultat dargestellt:
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Abbildungen, Tabellen und Code}
+\subsection{Abbildungen, Tabellen und Code}
 
 \minisec{Abbildungen}
 
