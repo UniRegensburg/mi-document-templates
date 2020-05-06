@@ -123,6 +123,42 @@ Beispielhaft werden hier Quellcode und Resultat dargestellt:
 
 \subsection{Abbildungen, Tabellen und Code}
 
+Größere Objekte, wie Tabellen oder Bilder, sollten in der Regel nicht an einer festen Position platziert werden.
+Der Seitenumbruch kann sonst nicht optimal platziert werden und bei der Platzierung mitten auf der Seite, wird der Lesefluss unterbrochen.
+\LaTeX{} liefert hier dem Autor die Möglichkeit sogenannte \emph{Gleitobjekte} mithilfe einer \emph{Gleitumgebung} zu definieren.
+
+Dies führt dazu, dass Objekte möglichst sinnvoll platziert werden, jedoch nicht direkt an der Stelle, an der sie definiert wurden, vgl. Abbildung \ref{fig:blume}.
+Die nicht-exakte Positionierung des Objektes ist dabei kein Nachteil, da ohnehin jede Abbildung über eine entsprechende Beschriftung und Nummer verfügen muss.
+Dadurch ist die Zuordnung mithilfe von Querverweisen möglich.
+
+Die Gleitumgebung heißt für Abbildungen \emph{figure} und für Tabellen \emph{table}. Die folgenden Mechanismen sind dabei analog benutzbar, es ändert sich lediglich der Bezeichner an der Beschriftung.
+
+\begin{verbatim}
+\begin{figure}
+<hier wird das eigentliche Bild eingefügt, siehe Folgeabschnitt>
+\caption{Bildbeschreibung}
+\label{fig:label}
+\end{figure}
+\end{verbatim}
+
+
+Der Querverweis auf die Abbildung ist dann folgendermaßen möglich:
+\begin{verbatim}
+siehe Abbildung \ref{fig:beispiel}
+\end{verbatim}
+es erzeugt die Ausgabe: „siehe Abbildung \ref{fig:beispiel}“
+
+Alle Gleitumgebungen verfügt zusätzlich über ein Optionales Argument, dass zur Beeinflussung der Platzierung benutzt werden kann:
+\begin{verbatim}
+\begin{figure}[Platzierung „tbp“, falls nicht angegeben]
+\end{verbatim}
+
+Dieses Argument kann eine Prioritätenliste aus t „top“, b „bottom“, h „here“ oder p „page“ (extra
+Seite) gesetzt werden. Der erste Wert der Liste hat die höchste Priorität und wird wenn möglich verwirklicht.
+Voreingestellt ist tbp. Dies ist dadurch begründet, dass h eine Positionierung mitten auf der Seite
+bedeutet. Die daraus resultierende Spaltung des Satzspiegels ist typografisch fragwürdig und wird daher nicht empfohlen.
+
+
 \minisec{Abbildungen}
 
 Um eine Abbildung einzufügen, werden normalerweise folgende Befehle verwendet:
