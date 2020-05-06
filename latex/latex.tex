@@ -205,24 +205,24 @@ Die Referenz \ref{fig:blume} wird dann mit \verb+\ref{fig:blume}+ erzeugt.
 
 \minisec{Tabellen}
 
-Tabellen in \LaTeX{} zu erstellen mag anfangs etwas umständlich erscheinen, sie bieten jedoch sehr viel gestalterische Möglichkeiten.
-Sie bestehen im Grunde aus zwei verschachtelten Environments:
+Tabellen in \LaTeX{} zu erstellen mag anfangs etwas umständlich erscheinen, sie bieten jedoch sehr viel gestalterische Möglichkeiten. Hier werden lediglich die einfachsten Grundlagen gezeigt.
 
-Das äußere \emph{table}-Environment enthält Anweisungen zum Kontext der Tabelle, beispielsweise Label, Tabellenbeschreibung und die Platzierung im Text.
+Für die Platzierung kann, wie zu Beginn dieses Abschnittes Beschrieben die \emph{table}-Umgebung benutzt werden.
 
-Innerhalb dessen befindet sich mit dem \emph{tabular}-Environment die eigentliche Tabelle.
+Innerhalb dieser befindet sich mit dem \emph{tabular}-Environment die eigentliche Tabelle.
 Dessen Parameter bestimmen die Anzahl der Spalten, sowie die Ausrichtung der Inhalte dieser.
 Über \verb|\hline| können horizontale Linien eingebaut werden.
 Die Inhalte werden Zeilenweise (getrennt durch \verb|\\|) hinzugefügt und diese Zeilen werden durch das \verb|&|-Symbol in Spalten unterteilt.
-Es wird empfohlen, die Tabelle zusätzlich noch in \verb|{\renewcommand{\arraystretch}{1.5} ...Inhalt...}| einzuschließen, um den Zeilenabstand zu erhöhen.
+
+Die Anpassung des Makros \verb+\arraystretch+ erhöht den Zeilenabstand. Für elegantere Lösungen betreffend Tabellen sei auf Ergänzungspakete wie tabularx \citep{latex:tabularx} oder booktabs \citep{latex:booktabs} verwiesen.
 
 \begin{verbatim}
-{\renewcommand{\arraystretch}{1.5}
-\begin{table}[h!]
+\begin{table}
+\renewcommand{\arraystretch}{1.5}
 \centering
-\begin{tabular}{ l|l } 
+\begin{tabular}{l|l}
 \hline
-    \textbf{Erste Spalte} & \textbf{Zweite Spalte} \\
+\bfseries Erste Spalte& \bfseries Zweite Spalte \\
 \hline
 Erste Zeile & lorem \\
 Zweite Zeile & ipsum \\
@@ -231,24 +231,24 @@ Dritte Zeile & dolor \\
 \end{tabular}
 \caption{Tabellenbeschreibung}
 \label{table:label_der_tabelle}
-\end{table}}
+\end{table}
 \end{verbatim}
 
-{\renewcommand{\arraystretch}{1.5}
-\begin{table}[h!]
-\centering
-\begin{tabular}{ l|l } 
-\hline
-    \textbf{Erste Spalte} & \textbf{Zweite Spalte} \\
-\hline
-Erste Zeile & lorem \\
-Zweite Zeile & ipsum \\
-Dritte Zeile & dolor \\
-\hline
-\end{tabular}
-\caption{Tabellenbeschreibung}
-\label{table:label_der_tabelle}
-\end{table}}
+\begin{table}
+	\renewcommand{\arraystretch}{1.5}
+	\centering
+	\begin{tabular}{l|l}
+		\hline
+		\bfseries Erste Spalte& \bfseries Zweite Spalte \\
+		\hline
+		Erste Zeile & lorem \\
+		Zweite Zeile & ipsum \\
+		Dritte Zeile & dolor \\
+		\hline
+	\end{tabular}
+	\caption{Tabellenbeschreibung}
+	\label{table:label_der_tabelle}
+\end{table}
 
 \minisec{Code}
 
