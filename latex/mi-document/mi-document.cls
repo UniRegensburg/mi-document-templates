@@ -39,11 +39,11 @@
 	\RequirePackage{tgcursor}
 	\RequirePackage[T1]{fontenc}
 \else
-	\usepackage{fontspec}
+	\RequirePackage{fontspec}
 	\setmainfont{TeX Gyre Pagella}
 	\setsansfont{TeX Gyre Heros}
 	\setmonofont{TeX Gyre Cursor}
-	\usepackage{unicode-math}
+	\RequirePackage{unicode-math}
 \fi
 
 \RequirePackage{pifont}
@@ -55,17 +55,17 @@
 }
 
 
-\usepackage{graphicx}
-\usepackage{color}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+thesis
 
+\RequirePackage{apacite}
+\RequirePackage{natbib}
+\RequirePackage{bibentry}
 
-\usepackage{apacite}
-\usepackage{natbib}
-\usepackage{bibentry}
+\RequirePackage[a4paper,left=3.5cm,right=3.5cm,top=2.5cm,bottom=2.5cm,includehead]{geometry}
 
-\usepackage[a4paper,left=3.5cm,right=3.5cm,top=2.5cm,bottom=2.5cm,includehead]{geometry}
-
-\usepackage{setspace}
+\RequirePackage{setspace}
 
 % page style
 \RequirePackage[automark]{scrlayer-scrpage}
@@ -172,11 +172,11 @@
 \setkomafont{disposition}{\bfseries}
 
 
-\usepackage{mi-colors}
-\usepackage{listings}
-\usepackage{mi-language-processing}
-\usepackage{mi-language-javascript}
-\usepackage{mi-language-python}
+\RequirePackage{mi-colors}
+\RequirePackage{listings}
+\RequirePackage{mi-language-processing}
+\RequirePackage{mi-language-javascript}
+\RequirePackage{mi-language-python}
 
 \lstloadlanguages{Python}
 \lstset{
