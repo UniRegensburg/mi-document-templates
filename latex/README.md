@@ -15,11 +15,11 @@ Verbesserungen des Templates dürfen gerne über GitHub eingebracht werden.
 
 ### Abhängigkeiten
 
-- Um das Template zu verwenden, wird TeX Live benötigt. Dies muss separat installiert werden. Unter Windows kann es sein, dass außerdem MiKTeX benötigt wird.
+- Um das Template zu verwenden, wird eine beliebige TeX-Distribution benötigt. TeX Live wird empfohlen, das Paket ist jedoch auch unter MikTeX lauffähig.
 
-- Als LaTeX-Compiler empfehlen wir XeLaTeX. Dedizierte LaTeX-Editoren liefern dies bereits mit.
+- Als LaTeX-Compiler empfehlen wir LuaLaTeX. Dedizierte LaTeX-Editoren liefern dies bereits mit.
 
-- Installation von TeX Live und XeLaTeX unter Linux:
+- Installation von TeX Live und LuaLaTeX unter Linux (Debian/Ubuntu) andere Paketverwaltungen sind ähnlich:
 
 ```
 sudo apt install texlive
