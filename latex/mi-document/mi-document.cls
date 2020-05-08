@@ -21,7 +21,15 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\ProvidesClass{mi-document}[2020/03/19 v1.1 mi-document]
+\ProvidesClass{mi-document}[2020/05/08 v2.0 mi-document]
+
+\newif\if@thesis
+\newif\if@seminar
+\DeclareOption{thesis}{\@thesistrue}
+\DeclareOption{seminar}{\@seminartrue}
+
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrreprt}}
+\ProcessOptions*\relax
 \LoadClass[fontsize=11pt,paper=a4,abstract=true,bibliography=totoc,headings=small]{scrreprt}
 
 \RequirePackage{iftex}
@@ -38,14 +46,13 @@
 	\usepackage{unicode-math}
 \fi
 
-	\RequirePackage{pifont}
+\RequirePackage{pifont}
 \newcommand{\checkboxEmpty}{
 	\ding{114}
 }
 \newcommand{\checkboxChecked}{
 	\leavevmode\rlap{\ding{55}}\ding{114}
 }
-
 
 
 \usepackage{graphicx}
@@ -192,5 +199,11 @@
 }
 
 
+\if@thesis
+\RequirePackage{mi-thesis}
+\fi
+\if@seminar
+\RequirePackage{mi-seminar}
+\fi
 
 \endinput
