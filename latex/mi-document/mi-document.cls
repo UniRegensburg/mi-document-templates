@@ -1,7 +1,7 @@
 % The MIT License (MIT)
 %
 % Copyright (c) 2016 Philipp Pascal Jean-Jacques
-% Copyright (c) 2020 Andreas Schmid
+% Copyright (c) 2020 Andreas Schmid & Marei Peischl
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -22,9 +22,7 @@
 % SOFTWARE.
 
 \ProvidesClass{mi-document}[2020/03/19 v1.1 mi-document]
-\LoadClass[fontsize=11pt,a4paper,oneside,abstract=true,bibliography=totoc,headings=small]{scrreprt}
-
-%TODO font setup
+\LoadClass[fontsize=11pt,paper=a4,abstract=true,bibliography=totoc,headings=small]{scrreprt}
 
 \RequirePackage{iftex}
 \ifPDFTeX
