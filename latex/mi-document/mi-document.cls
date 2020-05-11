@@ -57,7 +57,6 @@
 
 \RequirePackage{graphicx}
 \RequirePackage{color}
-thesis
 
 \RequirePackage{apacite}
 \RequirePackage{natbib}
@@ -71,7 +70,7 @@ thesis
 \RequirePackage[automark]{scrlayer-scrpage}
 \KOMAoptions{onpsinit={\setstretch{1}}}%ausgleich zu setspace
 \chead{}
-\ohead{\leftmark}
+\ohead[\leftmark]{\leftmark}
 \RequirePackage[hidelinks]{hyperref}
 
 
