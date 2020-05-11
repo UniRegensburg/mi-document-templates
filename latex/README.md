@@ -15,11 +15,11 @@ Verbesserungen des Templates dürfen gerne über GitHub eingebracht werden.
 
 ### Abhängigkeiten
 
-- Um das Template zu verwenden, wird TeX Live benötigt. Dies muss separat installiert werden. Unter Windows kann es sein, dass außerdem MiKTeX benötigt wird.
+- Um das Template zu verwenden, wird eine beliebige TeX-Distribution benötigt. TeX Live wird empfohlen, das Paket ist jedoch auch unter MikTeX lauffähig.
 
-- Als LaTeX-Compiler empfehlen wir XeLaTeX. Dedizierte LaTeX-Editoren liefern dies bereits mit.
+- Als LaTeX-Compiler empfehlen wir LuaLaTeX. Dedizierte LaTeX-Editoren liefern dies bereits mit.
 
-- Installation von TeX Live und XeLaTeX unter Linux:
+- Installation von TeX Live und LuaLaTeX unter Linux (Debian/Ubuntu) andere Paketverwaltungen sind ähnlich:
 
 ```
 sudo apt install texlive
@@ -62,13 +62,17 @@ sudo apt install texlive-bibtex-extra
 
 #### Overleaf
 
-- Zippen Sie den gesamten Inhalt des *latex*-Ordners.
+- Variante 1: Verwenden Sie die Overleaf-Vorlage (https://www.overleaf.com/latex/templates/mi-ur-template-fur-abschlussarbeiten/myvmvphngjjn)
 
-- Erstellen Sie in Overleaf ein neues Projekt ("New Project -> Upload Project") und laden Sie das gezippte Template hoch.
+- Variante 2:
 
-- Stellen Sie den Compiler auf XeLaTeX um ("Menu -> Compiler").
+  - Zippen Sie den gesamten Inhalt des *latex*-Ordners.
 
-- Kompilieren Sie ```document.tex```.
+  - Erstellen Sie in Overleaf ein neues Projekt ("New Project -> Upload Project") und laden Sie das gezippte Template hoch.
+
+  - Stellen Sie den Compiler auf XeLaTeX um ("Menu -> Compiler").
+
+  - Kompilieren Sie ```document.tex```.
 
 - *Alternative:* Das Template kann außerdem in der [Overleaf-Gallery](https://www.overleaf.com/latex/templates/mi-ur-template-fur-abschlussarbeiten/myvmvphngjjn) gefunden und dort direkt als Vorlage benutzt werden
 
