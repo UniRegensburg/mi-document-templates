@@ -1,8 +1,8 @@
-\usection{Anhang B: Tipps für \LaTeX}\label{latex}
+\chapter{Tipps für \LaTeX}\label{latex}
 
 Hier finden Sie gesammelte Hinweise, die sich speziell auf das \LaTeX-Template und dessen Verwendung beziehen. Der Aufbau des Templates wird dargelegt und wichtige Befehle werden anhand von Beispielen erklärt.
 
-\usubsection{Struktur des Templates}
+\section{Struktur des Templates}
 
 \begin{description}
     \item[mi-document/]{Dieses Verzeichnis enthält die Style- und Class-Files, die das eigentliche Template darstellen. In diesen werden Pakete importiert, Formatierungen definiert und zusätzliche Funktionen bereitgestellt. Manche Entwicklungsumgebungen für \LaTeX, wie TeXmaker und TeXstudio, finden diese Dateien leider nur, wenn sie sich im gleichen Verzeichnis befinden wie \verb|document.tex|. In diesem Fall müssen alle \verb|.sty|- und \verb|.cls|-Dateien in dessen Verzeichnis verschoben werden.}
@@ -13,39 +13,45 @@ Hier finden Sie gesammelte Hinweise, die sich speziell auf das \LaTeX-Template u
     \item[images/]{Bilddateien in diesem Verzeichnis können als Abbildungen in ein \LaTeX-Dokument eingebunden werden.}
 \end{description}
 
-\usubsection{Wichtige Befehle}
+\section{Wichtige Befehle}
 
-\usubsubsection{Sections, Subsections, etc.}
+\subsection{Sections, Subsections, etc.}
 
-Die Abschnitte eines \LaTeX-Dokuments werden in \textit{sections}, \textit{subsections} und \textit{subsubsections} aufgeteilt.
+Die Abschnitte eines \LaTeX-Dokuments werden in \emph{sections}, \emph{subsections} und \emph{subsubsections} aufgeteilt.
 Diese Abschnitte werden automatisch mit einer fortlaufenden Nummerierung versehen und im Inhaltsverzeichnis aufgeführt.
 Die Syntax der Befehle lautet wie folgt:
 
 \begin{verbatim}
-\section{Kapitelname}                 % z.B. 4 Gestaltungsrichtlinien
-\subsection{Unterkapitelname}         % z.B. 4.3 Formatierung
-\subsubsection{Unterunterkapitelname} % z.B. 4.3.3 Abbildungen
+\chapter{Kapitelname}              % z.B. 4 Gestaltungsrichtlinien
+\section{Unterkapitelname}         % z.B. 4.3 Formatierung
+\subsection{Unterunterkapitelname} % z.B. 4.3.3 Abbildungen
 \end{verbatim}
 
-Es wir empfohlen, Abschnitte außerdem mit Labels zu versehen, damit sie im späteren Verlauf der arbeit einfacher referenziert werden können:
+Es wir empfohlen, Abschnitte außerdem mit Labels zu versehen, damit sie im späteren Verlauf der Arbeit einfacher referenziert werden können:
 
 \begin{verbatim}
-\section{Kapitelname}\label{sec:Kapitelname} % Label wird gesetzt
+\chapter{Kapitelname}\label{sec:Kapitelname} % Label wird gesetzt
 \ref{sec:Kapitelname}                        % Referenz auf das Label
 \end{verbatim}
 
 Das die Referenz wird im Fließtext durch die \textbf{Kapitelnummer} ersetzt, sodass eine Syntax wie \verb|(siehe Kapitel \ref{Kapitelname})| empfohlen wird.
 
-Ist ein Abschnitt \textbf{ohne} Nummerierung gewünscht, so können die Befehle \verb|\usection|, \verb|\usubsection| und \verb|usubsubsection| benutzt werden.
-Die damit erstellten Abschnitte werden trotzdem im Inhaltsverzeichnis aufgeführt.
-Syntaktisch entsprechen diese Befehle \verb|section| etc.
+Ist ein Abschnitt \textbf{ohne} Nummerierung gewünscht, so können die Befehle \verb|\addchap| und \verb|\addsec| genutzt werden. Diese erzeugen nicht-nummerierte Überschriften inklusive Eintrag ins Inhaltsverzeichnis.
 
-\usubsubsection{Listen}
+Darüber hinaus existieren noch kleinere Zwischen-Überschriften, die nicht in das Inhaltsverzeichnis eingetragen werden.
 
-\LaTeX stellt drei verschiedene Arten von Listen bereit: Aufzählungen \textit{(itemize)}, nummerierte Aufzählungen \textit{(enumerate)} und Beschreibungen \textit{(description)}.
+\begin{verbatim}
+\minisec{Überschrift}
+\end{verbatim}
+
+
+
+\subsection{Listen}
+
+\LaTeX{} stellt drei verschiedene Arten von Listen bereit: Aufzählungen \emph{(itemize)}, nummerierte Aufzählungen \emph{enumerate} und Beschreibungen \emph{description}.
 Beispielhaft werden hier Quellcode und Resultat dargestellt:
 
-\textbf{\large{Aufzählung}}
+\minisec{Aufzählung}
 
 \begin{verbatim}
 \begin{itemize}
@@ -61,7 +67,7 @@ Beispielhaft werden hier Quellcode und Resultat dargestellt:
     \item{Das ist der dritte Punkt.}
 \end{itemize}
 
-\textbf{\large{Nummerierte Aufzählung}}
+\minisec{Nummerierte Aufzählung}
 
 \begin{verbatim}
 \begin{enumerate}
@@ -77,7 +83,7 @@ Beispielhaft werden hier Quellcode und Resultat dargestellt:
     \item{Das ist der dritte Punkt.}
 \end{enumerate}
 
-\textbf{\large{Beschreibung}}
+\minisec{Beschreibung}
 
 \begin{verbatim}
 \begin{description}
@@ -93,7 +99,7 @@ Beispielhaft werden hier Quellcode und Resultat dargestellt:
     \item[Drittens]{Das ist der dritte Punkt.}
 \end{description}
 
-Unterpunkte können erstellt werden, indem innerhalb einer Liste eine neue Liste erstellt wird:
+\noindent Unterpunkte können erstellt werden, indem innerhalb einer Liste eine neue Liste erstellt wird:
 
 \begin{verbatim}
 \begin{itemize}
@@ -115,53 +121,108 @@ Unterpunkte können erstellt werden, indem innerhalb einer Liste eine neue Liste
     \end{itemize}
 \end{itemize}
 
-\usubsubsection{Abbildungen, Tabellen und Code}
+\subsection{Abbildungen, Tabellen und Code}
 
-\textbf{\large{Abbildungen}}
+Größere Objekte, wie Tabellen oder Bilder, sollten in der Regel nicht an einer festen Position platziert werden.
+Der Seitenumbruch kann sonst nicht optimal platziert werden und bei der Platzierung mitten auf der Seite, wird der Lesefluss unterbrochen.
+\LaTeX{} liefert hier dem Autor die Möglichkeit sogenannte \emph{Gleitobjekte} mithilfe einer \emph{Gleitumgebung} zu definieren.
 
-Um eine Abbildung einzufügen, werden normalerweise folgende Befehle verwendet:
+Dies führt dazu, dass Objekte möglichst sinnvoll platziert werden, jedoch nicht direkt an der Stelle, an der sie definiert wurden, vgl. Abbildung \ref{fig:beispiel}.
+Die nicht-exakte Positionierung des Objektes ist dabei kein Nachteil, da ohnehin jede Abbildung über eine entsprechende Beschriftung und Nummer verfügen muss.
+Dadurch ist die Zuordnung mithilfe von Querverweisen möglich.
+
+Die Gleitumgebung heißt für Abbildungen \emph{figure} und für Tabellen \emph{table}. Die folgenden Mechanismen sind dabei analog benutzbar, es ändert sich lediglich der Bezeichner an der Beschriftung.
 
 \begin{verbatim}
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.5\textwidth]{{images/dateiname}}
-    \caption{Bildbeschreibung}
-    \label{fig:label}
+\begin{figure}
+<hier wird das eigentliche Bild eingefügt, siehe Folgeabschnitt>
+\caption{Bildbeschreibung}
+\label{fig:label}
 \end{figure}
 \end{verbatim}
 
-Dieses Template enthält jedoch eine Funktion, die dieses Kontrukt auf einen Einzeiler reduziert:
 
+Der Querverweis auf die Abbildung ist dann folgendermaßen möglich:
+\begin{verbatim}
+siehe Abbildung \ref{fig:beispiel}
+\end{verbatim}
+es erzeugt die Ausgabe: „siehe Abbildung \ref{fig:beispiel}“
+
+Alle Gleitumgebungen verfügt zusätzlich über ein Optionales Argument, dass zur Beeinflussung der Platzierung benutzt werden kann:
+\begin{verbatim}
+\begin{figure}[Platzierung „tbp“, falls nicht angegeben]
+\end{verbatim}
+
+Dieses Argument kann eine Prioritätenliste aus t „top“, b „bottom“, h „here“ oder p „page“ (extra
+Seite) gesetzt werden. Der erste Wert der Liste hat die höchste Priorität und wird wenn möglich verwirklicht.
+Voreingestellt ist tbp. Dies ist dadurch begründet, dass h eine Positionierung mitten auf der Seite
+bedeutet. Die daraus resultierende Spaltung des Satzspiegels ist typografisch fragwürdig und wird daher nicht empfohlen.
+
+
+\minisec{Abbildungen}
+
+Um eine Abbildung einzufügen kann obiges Beispiel entsprechend erweitert werden:
+
+\begin{verbatim}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/dateiname}
+	\caption{Bildbeschreibung}
+	\label{fig:label}
+\end{figure}
+\end{verbatim}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/blume}
+	\caption{Bildbeschreibung des Beispielbildes}
+	\label{fig:beispiel}
+\end{figure}
+
+Falls Ihre Arbeit viele Abbildungen des gleichen Formates enthält, können Sie sich folgendermaßen ein Makro als Abkürzung definieren:
+
+\begin{verbatim}
+\newcommand*{\image}[2]{
+	\begin{figure}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/#1}
+	\caption{#2}
+	\label{fig:#1}
+	\end{figure}
+}
+\end{verbatim}
+Diese Definition steht in der Datei \emph{config.tex} und kann dort auch angepasst werden.
+
+Damit erhalten Sie die Möglichkeit statt der obigen Umgebung einfach
 \begin{verbatim}
 \image{dateiname}{Bildbeschreibung}
 \end{verbatim}
+zu benutzen. Das Label erhält in diesem Fall den Namen „fig:<Dateiname>” für das Beispielbild.
 
-Dabei ist zu beachten, dass das Label der Abbildung in diesem Fall immer dem Dateinamen (ohne Extension) entspricht.
+\image{blume}{zweite Verwendung des Beispielbildes mit dem image-Makro. Die Datei heißt blume.jpg.}
 
-Das Ergebnis beider Varianten sieht so aus:
+Die Referenz \ref{fig:blume} wird dann mit \verb+\ref{fig:blume}+ erzeugt.
 
-\image{schwammerl}{Bildbeschreibung}
+\minisec{Tabellen}
 
-\textbf{\large{Tabellen}}
+Tabellen in \LaTeX{} zu erstellen mag anfangs etwas umständlich erscheinen, sie bieten jedoch sehr viel gestalterische Möglichkeiten. Hier werden lediglich die einfachsten Grundlagen gezeigt.
 
-Tabellen in \LaTeX zu erstellen mag anfangs etwas umständlich erscheinen, sie bieten jedoch sehr viel gestalterische Möglichkeiten.
-Sie bestehen im Grunde aus zwei verschachtelten Environments:
+Für die Platzierung kann, wie zu Beginn dieses Abschnittes Beschrieben die \emph{table}-Umgebung benutzt werden.
 
-Das äußere \textit{table}-Environment enthält Anweisungen zum Kontext der Tabelle, beispielsweise Label, Tabellenbeschreibung und die Platzierung im Text.
-
-Innerhalb dessen befindet sich mit dem \textit{tabular}-Environment die eigentliche Tabelle.
+Innerhalb dieser befindet sich mit dem \emph{tabular}-Environment die eigentliche Tabelle.
 Dessen Parameter bestimmen die Anzahl der Spalten, sowie die Ausrichtung der Inhalte dieser.
 Über \verb|\hline| können horizontale Linien eingebaut werden.
 Die Inhalte werden Zeilenweise (getrennt durch \verb|\\|) hinzugefügt und diese Zeilen werden durch das \verb|&|-Symbol in Spalten unterteilt.
-Es wird empfohlen, die Tabelle zusätzlich noch in \verb|{\renewcommand{\arraystretch}{1.5} ...Inhalt...}| einzuschließen, um den Zeilenabstand zu erhöhen.
+
+Die Anpassung des Makros \verb+\arraystretch+ erhöht den Zeilenabstand. Für elegantere Lösungen betreffend Tabellen sei auf Ergänzungspakete wie tabularx \citep{latex:tabularx} oder booktabs \citep{latex:booktabs} verwiesen.
 
 \begin{verbatim}
-{\renewcommand{\arraystretch}{1.5}
-\begin{table}[h!]
+\begin{table}
+\renewcommand{\arraystretch}{1.5}
 \centering
-\begin{tabular}{ l|l } 
+\begin{tabular}{l|l}
 \hline
-    \textbf{Erste Spalte} & \textbf{Zweite Spalte} \\
+\bfseries Erste Spalte& \bfseries Zweite Spalte \\
 \hline
 Erste Zeile & lorem \\
 Zweite Zeile & ipsum \\
@@ -170,26 +231,26 @@ Dritte Zeile & dolor \\
 \end{tabular}
 \caption{Tabellenbeschreibung}
 \label{table:label_der_tabelle}
-\end{table}}
+\end{table}
 \end{verbatim}
 
-{\renewcommand{\arraystretch}{1.5}
-\begin{table}[h!]
-\centering
-\begin{tabular}{ l|l } 
-\hline
-    \textbf{Erste Spalte} & \textbf{Zweite Spalte} \\
-\hline
-Erste Zeile & lorem \\
-Zweite Zeile & ipsum \\
-Dritte Zeile & dolor \\
-\hline
-\end{tabular}
-\caption{Tabellenbeschreibung}
-\label{table:label_der_tabelle}
-\end{table}}
+\begin{table}
+	\renewcommand{\arraystretch}{1.5}
+	\centering
+	\begin{tabular}{l|l}
+		\hline
+		\bfseries Erste Spalte& \bfseries Zweite Spalte \\
+		\hline
+		Erste Zeile & lorem \\
+		Zweite Zeile & ipsum \\
+		Dritte Zeile & dolor \\
+		\hline
+	\end{tabular}
+	\caption{Tabellenbeschreibung}
+	\label{table:label_der_tabelle}
+\end{table}
 
-\textbf{\large{Code}}
+\minisec{Code}
 
 Um Code einzubinden, wird das \verb|lstlisting|-Environment verwendet.
 Über Parameter können Metadaten wie die Programmiersparche (wichtig für korrektes Syntax-Highlighting), die Beschreibung und das Label festgelegt werden.
@@ -237,23 +298,22 @@ Könnte z.B. für Pseudocode nützlich sein.
 
 Sollen nur einzelne Wörter monospaced angezeigt werden, kann auf \verb!\verb|text|! zurückgegriffen werden: \verb|text|.
 
-\usubsubsection{Zitate und Fußnoten}
+\subsubsection{Zitate und Fußnoten}
 
-\textbf{\large{Zitate im Text}}
+\minisec{Zitate im Text}
 
-Zitate im Text und Einträge im Literaturverzeichnis werden aus Einträgen einer \textit{BibTeX}-Datei generiert.
+Zitate im Text und Einträge im Literaturverzeichnis werden aus Einträgen einer \emph{BibTeX}-Datei generiert.
 Diese kann entweder selbst zusammengestellt, oder aus einem Programm zu Literatuverwaltung (z.B. Zotero, Mendeley, Citavi) exportiert werden.
 
 Um eine Quelle zu zitieren, können folgende Befehle verwendet werden:
 
 \bigskip
 
-\begin{tabular}{ l|l }
+\begin{tabular}{@{}ll@{}}
 \hline
 \textbf{Befehl} & \textbf{Ergebnis} \\
 \hline
     \verb|\cite{mustermann2013test}| & \cite{mustermann2013test} \\
-    \verb|\cite[]{mustermann2013test}| & \cite[]{mustermann2013test} \\
     \verb|\cite[S. 15]{mustermann2013test}| & \cite[S. 15]{mustermann2013test} \\
     \verb|\citet[S. 15]{mustermann2013test}| & \citet[S. 15]{mustermann2013test} \\
 \hline
@@ -263,14 +323,14 @@ Um eine Quelle zu zitieren, können folgende Befehle verwendet werden:
 
 Einträge im Literaturverzeichnis werden automatisch erstellt, wenn eine Quelle zitiert wird.
 
-\textbf{\large{Blockzitate}}
+\minisec{Blockzitate}
 
 Blockzitate werden mit dem \verb|quote|-Environment umschlossen.
 Sie sollten mit einem Verweis auf die Literaturquelle beendet werden.
 
 \begin{verbatim}
 \begin{quote}
-«Wenn die Wurst so dick wie das Brot ist, ist es wurst wie dick das Brot ist.»
+«Wenn die Wurst so[…]»
 \cite[S. 4]{mustermann2013test}
 \end{quote}
 \end{verbatim}
@@ -280,8 +340,8 @@ Sie sollten mit einem Verweis auf die Literaturquelle beendet werden.
 \cite[S. 4]{mustermann2013test}
 \end{quote}
 
-\textbf{\large{Fußnoten}}
+\minisec{Fußnoten}
 
 Fußnoten werden über den \verb|\footnote{Inhalt der Fußnote}|-Befehl erstellt und automatisch nummeriert. Beispiel:
 
-Informationen zum Studium der Medieninformatik an der Universität Regensburg finden Sie auf der Website des Lehrstuhls\footnote{https://www.uni-regensburg.de/sprache-literatur-kultur/medieninformatik/}.
+Informationen zum Studium der Medieninformatik an der Universität Regensburg finden Sie auf der Website des Lehrstuhls\footnote{\url{https://www.uni-regensburg.de/sprache-literatur-kultur/medieninformatik/}}.
