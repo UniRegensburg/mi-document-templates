@@ -23,7 +23,7 @@ Verbesserungen des Templates dürfen gerne über GitHub eingebracht werden.
 
 ```
 sudo apt install texlive
-sudo apt install texlive-xetex
+sudo apt install texlive-luatex
 sudo apt install texlive-lang-german
 sudo apt install texlive-lang-science
 sudo apt install texlive-fonts-extra
