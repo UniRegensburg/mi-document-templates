@@ -15,15 +15,15 @@ Verbesserungen des Templates dürfen gerne über GitHub eingebracht werden.
 
 ### Abhängigkeiten
 
-- Um das Template zu verwenden, wird TeX Live benötigt. Dies muss separat installiert werden. Unter Windows kann es sein, dass außerdem MiKTeX benötigt wird.
+- Um das Template zu verwenden, wird eine beliebige TeX-Distribution benötigt. TeX Live wird empfohlen, das Paket ist jedoch auch unter MikTeX lauffähig.
 
-- Als LaTeX-Compiler empfehlen wir XeLaTeX. Dedizierte LaTeX-Editoren liefern dies bereits mit.
+- Als LaTeX-Compiler empfehlen wir LuaLaTeX. Dedizierte LaTeX-Editoren liefern dies bereits mit.
 
-- Installation von TeX Live und XeLaTeX unter Linux:
+- Installation von TeX Live und LuaLaTeX unter Linux (Debian/Ubuntu) andere Paketverwaltungen sind ähnlich:
 
 ```
 sudo apt install texlive
-sudo apt install texlive-xetex
+sudo apt install texlive-luatex
 sudo apt install texlive-lang-german
 sudo apt install texlive-lang-science
 sudo apt install texlive-fonts-extra
@@ -73,6 +73,8 @@ sudo apt install texlive-bibtex-extra
   - Stellen Sie den Compiler auf XeLaTeX um ("Menu -> Compiler").
 
   - Kompilieren Sie ```document.tex```.
+
+- *Alternative:* Das Template kann außerdem in der [Overleaf-Gallery](https://www.overleaf.com/latex/templates/mi-ur-template-fur-abschlussarbeiten/myvmvphngjjn) gefunden und dort direkt als Vorlage benutzt werden
 
 
 #### MacTex + TexShop (getestet unter 10.15.3, Catalina)
