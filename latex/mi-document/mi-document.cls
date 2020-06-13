@@ -22,6 +22,14 @@
 % SOFTWARE.
 
 \ProvidesClass{mi-document}[2020/03/19 v1.1 mi-document]
+
+%\RequirePackage[english, ngerman]{babel}
+%
+%\DeclareOption{german}{\selectlanguage{ngerman}}
+%\DeclareOption{english}{\selectlanguage{english}}
+%\DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrreprt}}
+%\ProcessOptions\relax
+
 \LoadClass[fontsize=11pt,paper=a4,abstract=true,bibliography=totoc,headings=small]{scrreprt}
 
 \RequirePackage{iftex}
@@ -46,15 +54,18 @@
 	\leavevmode\rlap{\ding{55}}\ding{114}
 }
 
-
+\usepackage[english, ngerman]{babel}
+\usepackage{translations}
 
 \usepackage{graphicx}
 \usepackage{color}
 
-
 \usepackage{apacite}
 \usepackage{natbib}
 \usepackage{bibentry}
+
+\usepackage{tabularx}
+\usepackage{booktabs}
 
 \usepackage[a4paper,left=3.5cm,right=3.5cm,top=2.5cm,bottom=2.5cm,includehead]{geometry}
 
@@ -67,13 +78,7 @@
 \ohead[\leftmark]{\leftmark}
 \RequirePackage[hidelinks]{hyperref}
 
-
 % commands for the title page
-\newcommand{\getAuthor}{unbekannter Author}
-\newcommand{\getTitle}{kein Titel}
-\newcommand{\getCourse}{kein Kurs}
-\newcommand{\getSemester}{SS 12}
-\newcommand{\getDozent}{Kein Dozent}
 \newcommand{\getDate}{\today}
 \newcommand{\getStudID}{}
 \newcommand{\getStudSemester}{}
@@ -85,11 +90,9 @@
 \newcommand{\getDateHandedIn}{}
 \newcommand{\getPhone}{}
 \newcommand{\getWorkType}{}
-\newcommand{\getStudSubject}{Medieninformatik}
 \newcommand{\getFirstReviewer}{}
 \newcommand{\getSecondReviewer}{}
 \newcommand{\getAdvisor}{}
-\newcommand{\getInstitute}{Institut für Information und Medien, Sprache und Kultur (I:IMSK)}
 \renewcommand{\author}[1]{\renewcommand{\getAuthor}{#1}}
 \renewcommand{\title}[1]{\renewcommand{\getTitle}{#1}}
 \newcommand{\course}[1]{\renewcommand{\getCourse}{#1}}
@@ -112,8 +115,6 @@
 			Keywords={\getKeywords}
 	}}
 }
-\newcommand{\bachelor}{\renewcommand{\getWorkType}{Bachelorarbeit}}
-\newcommand{\master}{\renewcommand{\getWorkType}{Masterarbeit}}
 \newcommand{\studSubject}[1]{\renewcommand{\getStudSubject}{#1}}
 \newcommand{\firstReviewer}[1]{\renewcommand{\getFirstReviewer}{#1}}
 \newcommand{\secondReviewer}[1]{\renewcommand{\getSecondReviewer}{#1}}
@@ -122,10 +123,36 @@
 \newcommand{\defaultStretch}{\setstretch{1.5}}
 
 \newcommand{\signature}{\@ifstar\mi@signaturestar\mi@signature}
-\newcommand{\mi@signature}{\par\vspace{1.5cm}\noindent Regensburg, \getDateHandedIn\hfill\SignatureBox{Unterschrift}\\\strut}
-\newcommand{\mi@signaturestar}{\par\vspace{1.5cm}\noindent\SignatureBox{Ort, Datum}\hfill\SignatureBox{Unterschrift}\\\strut}
 \newcommand*{\SignatureBox}[2][5cm]{\parbox[t]{#1}{\centering\rule{\linewidth}{.3pt}\\\makebox[0pt][c]{#2}}}
 
+% language-specific title page commands
+\ifcurrentbaselanguage{German}{
+\newcommand{\getTitle}{kein Titel}
+\newcommand{\getAuthor}{unbekannter Author}
+\newcommand{\getCourse}{kein Kurs}
+\newcommand{\getSemester}{SS 12}
+\newcommand{\getDozent}{Kein Dozent}
+\newcommand{\getStudSubject}{Medieninformatik}
+\newcommand{\bachelor}{\renewcommand{\getWorkType}{Bachelorarbeit}}
+\newcommand{\master}{\renewcommand{\getWorkType}{Masterarbeit}}
+\newcommand{\getInstitute}{Institut für Information und Medien, Sprache und Kultur (I:IMSK)}
+\newcommand{\mi@signature}{\par\vspace{1.5cm}\noindent Regensburg, \getDateHandedIn\hfill\SignatureBox{Unterschrift}\\\strut}
+\newcommand{\mi@signaturestar}{\par\vspace{1.5cm}\noindent\SignatureBox{Ort, Datum}\hfill\SignatureBox{Unterschrift}\\\strut}
+}
+
+\ifcurrentbaselanguage{English}{
+\newcommand{\getTitle}{no title}
+\newcommand{\getAuthor}{unknown Author}
+\newcommand{\getCourse}{no course}
+\newcommand{\getSemester}{SS 12}
+\newcommand{\getDozent}{no instructor}
+\newcommand{\getStudSubject}{Media Informatics}
+\newcommand{\bachelor}{\renewcommand{\getWorkType}{Bachelor's Thesis}}
+\newcommand{\master}{\renewcommand{\getWorkType}{Master's Thesis}}
+\newcommand{\getInstitute}{Institute for Information and Media, Language and Culture (I:IMSK)}
+\newcommand{\mi@signature}{\par\vspace{1.5cm}\noindent Regensburg, \getDateHandedIn\hfill\SignatureBox{Signature}\\\strut}
+\newcommand{\mi@signaturestar}{\par\vspace{1.5cm}\noindent\SignatureBox{Place, Date}\hfill\SignatureBox{Signature}\\\strut}
+}
 
 %abstract environment with language option
 \RequirePackage{xparse}
@@ -138,8 +165,6 @@
 	{\abstractname}%
 	\fi
 }{}
-
-
 
 %% lower line spacing for lists
 \let\orig@listi\@listi
@@ -161,9 +186,19 @@
 	\itemsep\z@
 }
 
+% create index
+\usepackage{imakeidx}
+
+\ifcurrentbaselanguage{German}{
+\makeindex[columns=2, intoc, title=Stichwortverzeichnis, options=-s indexstyle]
+}
+
+\ifcurrentbaselanguage{English}{
+\makeindex[columns=2, intoc, title=Index, options=-s indexstyle]
+}
+
 % fonts for section headings
 \setkomafont{disposition}{\bfseries}
-
 
 \usepackage{mi-colors}
 \usepackage{listings}
@@ -190,7 +225,5 @@
 	showstringspaces=false,
 	upquote=true,
 }
-
-
 
 \endinput

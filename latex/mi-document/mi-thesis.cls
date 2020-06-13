@@ -22,5 +22,9 @@
 % SOFTWARE.
 
 \ProvidesClass{mi-thesis}[2020/03/19 v1.1 mi-thesis]
-\LoadClass[12pt,a4paper,oneside,ngerman]{mi-document}
+
+%\DeclareOption*{\PassOptionsToClass{\CurrentOption}{mi-document}}
+%\ProcessOptions\relax
+
+\LoadClass[12pt,a4paper,oneside]{mi-document}
 \usepackage{mi-thesis}

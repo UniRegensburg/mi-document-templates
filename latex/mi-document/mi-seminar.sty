@@ -31,6 +31,8 @@
 \hfill\includegraphics[width=0.5\textwidth]{{images/logo_uni}}
 \vspace{20pt}
 
+\ifcurrentbaselanguage{German}{
+
 \bfseries
 Philosophische Fakultät III \\
 Sprach- , Literatur- und Kulturwissenschaften \\
@@ -61,5 +63,44 @@ Tel.: \getPhone\\
 
 Email: \getMail\\
 Abgegeben am \getDateHandedIn
+
+}
+
+\ifcurrentbaselanguage{English}{
+
+\bfseries
+Philosophische Fakultät III \\
+Sprach- , Literatur- und Kulturwissenschaften \\
+Institut für Information und Medien, Sprache und Kultur (I:IMSK)\\
+Lehrstuhl für Medieninformatik \\
+\rule{\textwidth}{0.4pt}
+
+\mdseries
+\getCourse\\
+Module: \getModule\\
+\getSemester\\
+Instructor: \getDozent\\
+\vspace*{120pt}
+
+\begin{center}
+\LARGE\bfseries
+\getTitle
+\end{center}
+
+\vfill
+
+\noindent\getAuthor\\
+\getStudID\\
+\getStudSemester
+
+\getAddress\\
+Tel.: \getPhone\\
+
+E-Mail: \getMail\\
+Handed in on \getDateHandedIn
+
+}
+
 \end{titlepage}
+
 }

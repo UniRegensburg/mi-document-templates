@@ -1,6 +1,8 @@
-\documentclass{mi-thesis}
+% durch Austauschen dieser Zeilen kann die Sprache des Templates geändert werden
+\PassOptionsToPackage{main=ngerman}{babel}
+%\PassOptionsToPackage{main=english}{babel}
 
-\usepackage[english, main=ngerman]{babel}
+\documentclass{mi-thesis}
 
 \bachelor % im Falle einer Masterarbeit \master
 
@@ -26,18 +28,10 @@
 
 \bibliographystyle{apacite}
 
-% Stichwortverzeichnis erstellen
-\usepackage{imakeidx}
-\makeindex[columns=2, intoc, title=Stichwortverzeichnis, options=-s indexstyle]
-
-\usepackage{tabularx}
-\usepackage{booktabs}
-
 % Falls Sie die Abkürzung zum Einbinden von Grafiken benutzen möchten. Erläuterung fnden Sie im Abschnitt zu Abbildungen.
 \input{config}
 
 \begin{document}
-
 
 % Die Nummerierung beginnt mit der Titelseite (= Seite 1), soll aber erst ab der ersten Inhaltsseite (Einleitung) angezeigt werden.
 \pagestyle{empty}

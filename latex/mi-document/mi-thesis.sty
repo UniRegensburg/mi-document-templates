@@ -40,15 +40,25 @@
 
 \vspace{20pt}
 \normalsize
+
+
+\ifcurrentbaselanguage{German}{
 \getWorkType{} im Fach \getStudSubject{}\\
 am \getInstitute
+}
+
+\ifcurrentbaselanguage{English}{
+\getWorkType{} in \getStudSubject{}\\
+at \getInstitute
+}
 
 \setstretch{1.0}
 
 \vfill
 
-
 \begin{tabularx}{\linewidth}{@{}l<{:}>{\RaggedRight\arraybackslash}X@{}}
+\ifcurrentbaselanguage{German}{
+
 Vorgelegt von&\getAuthor\\
 Adresse&\getAddress\\
 E-Mail (Universität)&\getStudMail\\
@@ -59,6 +69,24 @@ Zweitgutachter&\getSecondReviewer\\
 Betreuer&\getAdvisor\\
 Laufendes Semester&\getStudSemester\\
 Abgegeben am&\getDateHandedIn
+
+}
+
+\ifcurrentbaselanguage{English}{
+
+Handed in by&\getAuthor\\
+Address&\getAddress\\
+E-Mail (University)&\getStudMail\\
+E-Mail (private)&\getMail\\
+Student Number&\getStudID\\
+Primary Corrector&\getFirstReviewer\\
+Secondary Corrector&\getSecondReviewer\\
+Supervisor&\getAdvisor\\
+Current Semester&\getStudSemester\\
+Date handed in&\getDateHandedIn
+
+}
+
 \end{tabularx}
 \end{titlepage}
 }

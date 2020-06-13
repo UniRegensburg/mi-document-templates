@@ -21,6 +21,10 @@
 % SOFTWARE.
 
 \ProvidesClass{mi-seminar}[2016/07/15 v1.0 mi-seminar]
-\LoadClass[12pt,a4paper,oneside,ngerman]{mi-document}
+
+%\DeclareOption*{\PassOptionsToClass{\CurrentOption}{mi-document}}
+%\ProcessOptions\relax
+
+\LoadClass[12pt,a4paper,oneside]{mi-document}
 
 \usepackage{mi-seminar}
