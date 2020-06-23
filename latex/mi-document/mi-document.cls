@@ -145,7 +145,7 @@
 \newcommand{\getAuthor}{unknown Author}
 \newcommand{\getCourse}{no course}
 \newcommand{\getSemester}{SS 12}
-\newcommand{\getDozent}{no instructor}
+\newcommand{\getDozent}{no advisor}
 \newcommand{\getStudSubject}{Media Informatics}
 \newcommand{\bachelor}{\renewcommand{\getWorkType}{Bachelor's Thesis}}
 \newcommand{\master}{\renewcommand{\getWorkType}{Master's Thesis}}
