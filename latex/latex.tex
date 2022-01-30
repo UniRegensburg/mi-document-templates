@@ -21,18 +21,18 @@ Die Abschnitte eines \LaTeX-Dokuments werden in \emph{chapters}, \emph{sections}
 Diese Abschnitte werden automatisch mit einer fortlaufenden Nummerierung versehen und im Inhaltsverzeichnis aufgeführt.
 Die Syntax der Befehle lautet wie folgt:
 
-\begin{verbatim}
+\begin{lstlisting}[language=TeX]
 \chapter{Kapitelname}              % z.B. 4 Gestaltungsrichtlinien
 \section{Unterkapitelname}         % z.B. 4.3 Formatierung
 \subsection{Unterunterkapitelname} % z.B. 4.3.3 Abbildungen
-\end{verbatim}
+\end{lstlisting}
 
 Es wir empfohlen, Abschnitte außerdem mit Labels zu versehen, damit sie im späteren Verlauf der Arbeit einfacher referenziert werden können:
 
-\begin{verbatim}
+\begin{lstlisting}[language=TeX]
 \chapter{Kapitelname}\label{sec:Kapitelname} % Label wird gesetzt
 \ref{sec:Kapitelname}                        % Referenz auf das Label
-\end{verbatim}
+\end{lstlisting}
 
 Das die Referenz wird im Fließtext durch die \textbf{Kapitelnummer} ersetzt, sodass eine Syntax wie \verb|(siehe Kapitel \ref{Kapitelname})| empfohlen wird.
 
@@ -40,9 +40,9 @@ Ist ein Abschnitt \textbf{ohne} Nummerierung gewünscht, so können die Befehle 
 
 Darüber hinaus existieren noch kleinere Zwischen-Überschriften, die nicht in das Inhaltsverzeichnis eingetragen werden.
 
-\begin{verbatim}
+\begin{lstlisting}[language=TeX]
 \minisec{Überschrift}
-\end{verbatim}
+\end{lstlisting}
 
 
 
@@ -53,13 +53,13 @@ Beispielhaft werden hier Quellcode und Resultat dargestellt:
 
 \minisec{Aufzählung}
 
-\begin{verbatim}
+\begin{lstlisting}[language=TeX]
 \begin{itemize}
     \item{Das ist der erste Punkt.}
     \item{Das ist der zweite Punkt.}
     \item{Das ist der dritte Punkt.}
 \end{itemize}
-\end{verbatim}
+\end{lstlisting}
 
 \begin{itemize}
     \item{Das ist der erste Punkt.}
@@ -69,13 +69,13 @@ Beispielhaft werden hier Quellcode und Resultat dargestellt:
 
 \minisec{Nummerierte Aufzählung}
 
-\begin{verbatim}
+\begin{lstlisting}[language=TeX]
 \begin{enumerate}
     \item{Das ist der erste Punkt.}
     \item{Das ist der zweite Punkt.}
     \item{Das ist der dritte Punkt.}
 \end{enumerate}
-\end{verbatim}
+\end{lstlisting}
 
 \begin{enumerate}
     \item{Das ist der erste Punkt.}
@@ -85,13 +85,13 @@ Beispielhaft werden hier Quellcode und Resultat dargestellt:
 
 \minisec{Beschreibung}
 
-\begin{verbatim}
+\begin{lstlisting}[language=TeX]
 \begin{description}
     \item[Erstens]{Das ist der erste Punkt.}
     \item[Zweitens]{Das ist der zweite Punkt.}
     \item[Drittens]{Das ist der dritte Punkt.}
 \end{description}
-\end{verbatim}
+\end{lstlisting}
 
 \begin{description}
     \item[Erstens]{Das ist der erste Punkt.}
@@ -101,7 +101,7 @@ Beispielhaft werden hier Quellcode und Resultat dargestellt:
 
 \noindent Unterpunkte können erstellt werden, indem innerhalb einer Liste eine neue Liste erstellt wird:
 
-\begin{verbatim}
+\begin{lstlisting}[language=TeX]
 \begin{itemize}
     \item{Das ist der erste Punkt.}
     \item{Das ist der zweite Punkt.}
@@ -110,7 +110,7 @@ Beispielhaft werden hier Quellcode und Resultat dargestellt:
         \item{Das ist noch ein Unterpunkt.}
     \end{itemize}
 \end{itemize}
-\end{verbatim}
+\end{lstlisting}
 
 \begin{itemize}
     \item{Das ist der erste Punkt.}
@@ -133,25 +133,25 @@ Dadurch ist die Zuordnung mithilfe von Querverweisen möglich.
 
 Die Gleitumgebung heißt für Abbildungen \emph{figure} und für Tabellen \emph{table}. Die folgenden Mechanismen sind dabei analog benutzbar, es ändert sich lediglich der Bezeichner an der Beschriftung.
 
-\begin{verbatim}
+\begin{lstlisting}[language=TeX]
 \begin{figure}
 <hier wird das eigentliche Bild eingefügt, siehe Folgeabschnitt>
 \caption{Bildbeschreibung}
 \label{fig:label}
 \end{figure}
-\end{verbatim}
+\end{lstlisting}
 
 
 Der Querverweis auf die Abbildung ist dann folgendermaßen möglich:
-\begin{verbatim}
+\begin{lstlisting}[language=TeX]
 siehe Abbildung \ref{fig:beispiel}
-\end{verbatim}
+\end{lstlisting}
 es erzeugt die Ausgabe: „siehe Abbildung \ref{fig:beispiel}“
 
 Alle Gleitumgebungen verfügt zusätzlich über ein Optionales Argument, dass zur Beeinflussung der Platzierung benutzt werden kann:
-\begin{verbatim}
+\begin{lstlisting}[language=TeX]
 \begin{figure}[Platzierung „tbp“, falls nicht angegeben]
-\end{verbatim}
+\end{lstlisting}
 
 Dieses Argument kann eine Prioritätenliste aus t „top“, b „bottom“, h „here“ oder p „page“ (extra
 Seite) gesetzt werden. Der erste Wert der Liste hat die höchste Priorität und wird wenn möglich verwirklicht.
@@ -163,14 +163,14 @@ bedeutet. Die daraus resultierende Spaltung des Satzspiegels ist typografisch fr
 
 Um eine Abbildung einzufügen kann obiges Beispiel entsprechend erweitert werden:
 
-\begin{verbatim}
+\begin{lstlisting}[language=TeX]
 \begin{figure}
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/dateiname}
 	\caption{Bildbeschreibung}
 	\label{fig:label}
 \end{figure}
-\end{verbatim}
+\end{lstlisting}
 
 \begin{figure}
 	\centering
@@ -192,20 +192,20 @@ In diesem Fall kann durch einen optionalen Parameter \verb|\caption[Kurzbeschrei
 Bei sehr hohen und schmalen Bildern kann es nützlich sein, Textumfluss zu verwenden.
 Dies kann in \LaTeX mit der \verb|wrapfigure|-Umgebung umgesetzt werden:
 
-\begin{verbatim}
+\begin{lstlisting}[language=TeX]
 \begin{wrapfigure}{R}{0.3\textwidth}
 	\centering
 	\includegraphics[width=0.25\textwidth]{images/schwammerl}
 	\caption{Bild mit Textumfluss.}
 	\label{fig:beispiel_umfluss}
 \end{wrapfigure}
-\end{verbatim}
+\end{lstlisting}
 
 
 
 Falls Ihre Arbeit viele Abbildungen des gleichen Formates enthält, können Sie sich folgendermaßen ein Makro als Abkürzung definieren:
 
-\begin{verbatim}
+\begin{lstlisting}[language=TeX]
 \newcommand*{\image}[2]{
 	\begin{figure}
 	\centering
@@ -214,7 +214,7 @@ Falls Ihre Arbeit viele Abbildungen des gleichen Formates enthält, können Sie 
 	\label{fig:#1}
 	\end{figure}
 }
-\end{verbatim}
+\end{lstlisting}
 Diese Definition steht in der Datei \emph{config.tex} und kann dort auch angepasst werden.
 
 Damit erhalten Sie die Möglichkeit statt der obigen Umgebung einfach
@@ -240,7 +240,7 @@ Die Inhalte werden Zeilenweise (getrennt durch \verb|\\|) hinzugefügt und diese
 
 Die Anpassung des Makros \verb+\arraystretch+ erhöht den Zeilenabstand. Für elegantere Lösungen betreffend Tabellen sei auf Ergänzungspakete wie tabularx \citep{latex:tabularx} oder booktabs \citep{latex:booktabs} verwiesen.
 
-\begin{verbatim}
+\begin{lstlisting}[language=TeX]
 \begin{table}
 \renewcommand{\arraystretch}{1.5}
 \centering
@@ -256,7 +256,7 @@ Dritte Zeile & dolor \\
 \caption{Tabellenbeschreibung}
 \label{table:label_der_tabelle}
 \end{table}
-\end{verbatim}
+\end{lstlisting}
 
 \begin{table}
 	\renewcommand{\arraystretch}{1.5}
@@ -352,12 +352,12 @@ Einträge im Literaturverzeichnis werden automatisch erstellt, wenn eine Quelle 
 Blockzitate werden mit dem \verb|quote|-Environment umschlossen.
 Sie sollten mit einem Verweis auf die Literaturquelle beendet werden.
 
-\begin{verbatim}
+\begin{lstlisting}[language=TeX]
 \begin{quote}
 «Wenn die Wurst so[…]»
 \cite[S. 4]{mustermann2013test}
 \end{quote}
-\end{verbatim}
+\end{lstlisting}
 
 \begin{quote}
 «Wenn die Wurst so dick wie das Brot ist, ist es wurst wie dick das Brot ist.»
