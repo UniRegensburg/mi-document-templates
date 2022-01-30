@@ -206,6 +206,7 @@
 \usepackage{mi-language-processing}
 \usepackage{mi-language-javascript}
 \usepackage{mi-language-python}
+\usepackage{mi-language-latex}
 
 % auskommentieren, damit Sachen nach Kapitel nummeriert werden (z.B. Abbildung 3.2)
 \usepackage[format=plain]{caption}
