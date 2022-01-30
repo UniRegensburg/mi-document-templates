@@ -206,6 +206,15 @@
 \usepackage{mi-language-javascript}
 \usepackage{mi-language-python}
 
+\ifcurrentbaselanguage{German}{
+\renewcommand{\lstlistingname}{Codebeispiel}
+\renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
+}
+
+\ifcurrentbaselanguage{English}{
+\renewcommand{\lstlistlistingname}{List of Listings}
+}
+
 \lstloadlanguages{Python}
 \lstset{
 	language=Python,   % default language
