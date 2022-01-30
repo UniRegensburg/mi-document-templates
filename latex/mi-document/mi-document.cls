@@ -206,6 +206,16 @@
 \usepackage{mi-language-javascript}
 \usepackage{mi-language-python}
 
+% auskommentieren, damit Sachen nach Kapitel nummeriert werden (z.B. Abbildung 3.2)
+\usepackage[format=plain]{caption}
+\usepackage{chngcntr}
+\AtBeginDocument{
+    \counterwithout{footnote}{chapter}
+    \counterwithout{figure}{chapter}
+    \counterwithout{table}{chapter}
+    \counterwithout{lstlisting}{chapter}
+}
+
 \ifcurrentbaselanguage{German}{
 \renewcommand{\lstlistingname}{Codebeispiel}
 \renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
