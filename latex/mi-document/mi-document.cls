@@ -58,6 +58,7 @@
 \usepackage{translations}
 
 \usepackage{graphicx}
+\usepackage{wrapfig}
 \usepackage{color}
 
 \usepackage{apacite}

@@ -182,6 +182,27 @@ Um eine Abbildung einzufügen kann obiges Beispiel entsprechend erweitert werden
 Meist sind ausführliche Bildbeschreibungen empfehlenswert, damit eine Abbildung für sich selbst stehen kann.
 In diesem Fall kann durch einen optionalen Parameter \verb|\caption[Kurzbeschreibung]{Langbeschreibung}| eine Kurzform angegeben werden, welche dann im Abbildungsverzeichnis erscheint.
 
+\begin{wrapfigure}{R}{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.25\textwidth]{images/schwammerl}
+	\caption{Bild mit Textumfluss.}
+	\label{fig:beispiel_umfluss}
+\end{wrapfigure}
+
+Bei sehr hohen und schmalen Bildern kann es nützlich sein, Textumfluss zu verwenden.
+Dies kann in \LaTeX mit der \verb|wrapfigure|-Umgebung umgesetzt werden:
+
+\begin{verbatim}
+\begin{wrapfigure}{R}{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.25\textwidth]{images/schwammerl}
+	\caption{Bild mit Textumfluss.}
+	\label{fig:beispiel_umfluss}
+\end{wrapfigure}
+\end{verbatim}
+
+
+
 Falls Ihre Arbeit viele Abbildungen des gleichen Formates enthält, können Sie sich folgendermaßen ein Makro als Abkürzung definieren:
 
 \begin{verbatim}
