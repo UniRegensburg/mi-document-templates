@@ -85,7 +85,7 @@ sudo apt install texlive-bibtex-extra
 
 - Führen Sie ```make```aus
 
-- Installieren Sie manuell die Fonts **DejaVuSans**, **GyreTex Pagella** und **Nimbus Sans** (z.B. von https://fontsquirrel.com)
+- Installieren Sie manuell die Fonts [**DejaVuSans**](https://www.fontsquirrel.com/fonts/dejavu-sans), [**GyreTex Pagella**](https://www.fontsquirrel.com/fonts/TeX-Gyre-Pagella) und [**Nimbus Sans**](https://www.fontsquirrel.com/fonts/nimbus-sans-l) (z.B. von https://fontsquirrel.com)
 
 - Öffnen Sie ```document.tex``` in TexShop
 
