@@ -57,6 +57,8 @@
 \usepackage[english, ngerman]{babel}
 \usepackage{translations}
 
+\usepackage{etoolbox}
+
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{color}
