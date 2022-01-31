@@ -167,25 +167,11 @@
 	\fi
 }{}
 
-%% lower line spacing for lists
-\let\orig@listi\@listi
-\def\@listi{%
-	\orig@listi
-	\itemsep\z@
-}
-\let\@listI\@listi
-
-\let\orig@listii\@listii
-\def\@listii{%
-	\orig@listii
-	\itemsep\z@
-}
-
-\let\orig@listiii\@listiii
-\def\@listiii{%
-	\orig@listiii
-	\itemsep\z@
-}
+% lower line spacing for lists
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep}
+\setlist[enumerate]{noitemsep}
+\setlist[description]{noitemsep}
 
 % create index
 \usepackage{imakeidx}
