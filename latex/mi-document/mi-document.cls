@@ -21,15 +21,15 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-\ProvidesClass{mi-document}[2020/03/19 v1.1 mi-document]
+\ProvidesClass{mi-document}[2020/05/08 v2.0 mi-document]
 
-%\RequirePackage[english, ngerman]{babel}
-%
-%\DeclareOption{german}{\selectlanguage{ngerman}}
-%\DeclareOption{english}{\selectlanguage{english}}
-%\DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrreprt}}
-%\ProcessOptions\relax
+\newif\if@thesis
+\newif\if@seminar
+\DeclareOption{thesis}{\@thesistrue}
+\DeclareOption{seminar}{\@seminartrue}
 
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrreprt}}
+\ProcessOptions*\relax
 \LoadClass[fontsize=11pt,paper=a4,abstract=true,bibliography=totoc,headings=small]{scrreprt}
 
 \RequirePackage{iftex}
@@ -39,11 +39,11 @@
 	\RequirePackage{tgcursor}
 	\RequirePackage[T1]{fontenc}
 \else
-	\usepackage{fontspec}
+	\RequirePackage{fontspec}
 	\setmainfont{TeX Gyre Pagella}
 	\setsansfont{TeX Gyre Heros}
 	\setmonofont{TeX Gyre Cursor}
-	\usepackage{unicode-math}
+	\RequirePackage{unicode-math}
 \fi
 
 \RequirePackage[hidelinks]{hyperref}
@@ -59,22 +59,24 @@
 \usepackage[english, ngerman]{babel}
 \usepackage{translations}
 
-\usepackage{etoolbox}
+\RequirePackage{etoolbox}
 
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{color}
+\RequirePackage{graphicx}
+\RequirePackage{wrapfig}
+\RequirePackage{color}
 
-\usepackage{apacite}
-\usepackage{natbib}
-\usepackage{bibentry}
+\RequirePackage{apacite}
+\RequirePackage{natbib}
+\RequirePackage{bibentry}
 
-\usepackage{tabularx}
-\usepackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{booktabs}
 
-\usepackage[a4paper,left=3.5cm,right=3.5cm,top=2.5cm,bottom=2.5cm,includehead]{geometry}
+\RequirePackage{ragged2e}
 
-\usepackage{setspace}
+\RequirePackage[a4paper,left=3.5cm,right=3.5cm,top=2.5cm,bottom=2.5cm,includehead]{geometry}
+
+\RequirePackage{setspace}
 
 % page style
 \RequirePackage[automark]{scrlayer-scrpage}
@@ -192,12 +194,12 @@
 % fonts for section headings
 \setkomafont{disposition}{\bfseries}
 
-\usepackage{mi-colors}
-\usepackage{listings}
-\usepackage{mi-language-processing}
-\usepackage{mi-language-javascript}
-\usepackage{mi-language-python}
-\usepackage{mi-language-latex}
+\RequirePackage{mi-colors}
+\RequirePackage{listings}
+\RequirePackage{mi-language-processing}
+\RequirePackage{mi-language-javascript}
+\RequirePackage{mi-language-python}
+\RequirePackage{mi-language-latex}
 
 % auskommentieren, damit Sachen nach Kapitel nummeriert werden (z.B. Abbildung 3.2)
 \usepackage[format=plain]{caption}
@@ -237,5 +239,12 @@
 	showstringspaces=false,
 	upquote=true,
 }
+
+\if@thesis
+\RequirePackage{mi-thesis}
+\fi
+\if@seminar
+\RequirePackage{mi-seminar}
+\fi
 
 \endinput
