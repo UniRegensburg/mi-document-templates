@@ -46,7 +46,9 @@
 	\usepackage{unicode-math}
 \fi
 
-	\RequirePackage{pifont}
+\RequirePackage[hidelinks]{hyperref}
+
+\RequirePackage{pifont}
 \newcommand{\checkboxEmpty}{
 	\ding{114}
 }
@@ -79,7 +81,6 @@
 \KOMAoptions{onpsinit={\setstretch{1}}}%ausgleich zu setspace
 \chead{}
 \ohead[\leftmark]{\leftmark}
-\RequirePackage[hidelinks]{hyperref}
 
 % commands for the title page
 \newcommand{\getDate}{\today}
@@ -110,14 +111,6 @@
 \newcommand{\address}[2]{\renewcommand{\getAddress}{#1}}
 \newcommand{\phone}[1]{\renewcommand{\getPhone}{#1}}
 \newcommand{\dateHandedIn}[1]{\renewcommand{\getDateHandedIn}{#1}}
-\AtBeginDocument{
-	\hypersetup{pdfinfo={
-			Title={\getTitle},
-			Author={\getAuthor},
-			Subject={\getCourse},
-			Keywords={\getKeywords}
-	}}
-}
 \newcommand{\studSubject}[1]{\renewcommand{\getStudSubject}{#1}}
 \newcommand{\firstReviewer}[1]{\renewcommand{\getFirstReviewer}{#1}}
 \newcommand{\secondReviewer}[1]{\renewcommand{\getSecondReviewer}{#1}}
@@ -155,6 +148,16 @@
 \newcommand{\getInstitute}{Institute for Information and Media, Language and Culture (I:IMSK)}
 \newcommand{\mi@signature}{\par\vspace{1.5cm}\noindent Regensburg, \getDateHandedIn\hfill\SignatureBox{Signature}\\\strut}
 \newcommand{\mi@signaturestar}{\par\vspace{1.5cm}\noindent\SignatureBox{Place, Date}\hfill\SignatureBox{Signature}\\\strut}
+}
+
+% set PDF metadata
+\AtBeginDocument{
+	\hypersetup{pdfinfo={
+			Title={\getTitle},
+			Author={\getAuthor},
+			Subject={\getCourse},
+			Keywords={\getKeywords}
+	}}
 }
 
 %abstract environment with language option
