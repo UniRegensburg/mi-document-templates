@@ -223,6 +223,7 @@
 \lstloadlanguages{Python}
 \lstset{
 	language=Python,   % default language
+    aboveskip=0.6cm,
 	xleftmargin=0.6cm,
 	frameround=ffff,
 	rulecolor = \color[rgb]{0.6, 0.6, 0.6},
