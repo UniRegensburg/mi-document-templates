@@ -174,6 +174,11 @@
 	\fi
 }{}
 
+% remove dot after figure number
+\renewcommand*{\figureformat}{%
+  \figurename~\thefigure%
+}
+
 % lower line spacing for lists
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep}
