@@ -7,6 +7,7 @@
 %\documentclass[seminar]{mi-document}
 
 \bachelor % im Falle einer Masterarbeit \master
+%\master
 
 % Variablen, die für das Deckblatt und Metadaten verwendet werden
 \title{[Titel der Bachelor-/ Masterarbeit]}
@@ -34,6 +35,12 @@
 \input{config}
 
 \begin{document}
+
+% auskommentieren, damit Sachen nach Kapitel nummeriert werden (z.B. Abbildung 3.2)
+\counterwithout{footnote}{chapter}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{lstlisting}{chapter}
 
 % Die Nummerierung beginnt mit der Titelseite (= Seite 1), soll aber erst ab der ersten Inhaltsseite (Einleitung) angezeigt werden.
 \pagestyle{empty}
